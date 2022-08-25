@@ -1,0 +1,15 @@
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\bin\Debug\BasculaInventario.exe.config
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\bin\Debug\BasculaInventario.exe
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\bin\Debug\BasculaInventario.pdb
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.frmMain.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.Properties.Resources.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.csproj.GenerateResource.cache
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.exe
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.pdb
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.FrmTurno.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.Turnos.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.FrmUsuario.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.Usuarios.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.Login.resources
