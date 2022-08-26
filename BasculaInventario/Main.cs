@@ -46,5 +46,41 @@ namespace BasculaInventario
             Usuarios usuarios = new Usuarios();
             usuarios.Show();
         }
+
+        private void conexionABDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ParamSQL paramSQL = new ParamSQL();
+            paramSQL.Show();
+        }
+
+        private void aditivosMenuItem_Click(object sender, EventArgs e)
+        {
+            Aditivos aditivos = new Aditivos();
+            aditivos.Show();
+        }
+
+        private void coloresMenuItem_Click(object sender, EventArgs e)
+        {
+            Colores colores = new Colores();
+            colores.Show();
+        }
+
+        private void maquinasMenuItem_Click(object sender, EventArgs e)
+        {
+            Maquinas maquinas = new Maquinas();
+            maquinas.Show();
+        }
+
+        private void choferesMenuItem_Click(object sender, EventArgs e)
+        {
+            Choferes choferes = new Choferes();
+            choferes.Show();
+        }
+
+        private void vehiculosMenuItem_Click(object sender, EventArgs e)
+        {
+            Vehiculos vehiculos = new Vehiculos();
+            vehiculos.Show();
+        }
     }
 }

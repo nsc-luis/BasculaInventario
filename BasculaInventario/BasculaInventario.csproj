@@ -45,7 +45,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aditivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aditivos.Designer.cs">
+      <DependentUpon>Aditivos.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseDeDatos.cs" />
+    <Compile Include="Choferes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Choferes.Designer.cs">
+      <DependentUpon>Choferes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Colores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colores.Designer.cs">
+      <DependentUpon>Colores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAditivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAditivo.Designer.cs">
+      <DependentUpon>frmAditivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChofer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChofer.Designer.cs">
+      <DependentUpon>frmChofer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmColor.Designer.cs">
+      <DependentUpon>frmColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaquina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaquina.Designer.cs">
+      <DependentUpon>frmMaquina.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTurno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,11 +100,29 @@
     <Compile Include="FrmUsuario.Designer.cs">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVehiculo.Designer.cs">
+      <DependentUpon>frmVehiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maquinas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maquinas.Designer.cs">
+      <DependentUpon>Maquinas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParamSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParamSQL.Designer.cs">
+      <DependentUpon>ParamSQL.cs</DependentUpon>
     </Compile>
     <Compile Include="Turnos.cs">
       <SubType>Form</SubType>
@@ -84,14 +144,50 @@
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehiculos.Designer.cs">
+      <DependentUpon>Vehiculos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Aditivos.resx">
+      <DependentUpon>Aditivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Choferes.resx">
+      <DependentUpon>Choferes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colores.resx">
+      <DependentUpon>Colores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAditivo.resx">
+      <DependentUpon>frmAditivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChofer.resx">
+      <DependentUpon>frmChofer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmColor.resx">
+      <DependentUpon>frmColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaquina.resx">
+      <DependentUpon>frmMaquina.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTurno.resx">
       <DependentUpon>FrmTurno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVehiculo.resx">
+      <DependentUpon>frmVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maquinas.resx">
+      <DependentUpon>Maquinas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParamSQL.resx">
+      <DependentUpon>ParamSQL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Turnos.resx">
       <DependentUpon>Turnos.cs</DependentUpon>
@@ -110,6 +206,9 @@
     </Compile>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehiculos.resx">
+      <DependentUpon>Vehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

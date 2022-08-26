@@ -29,5 +29,10 @@ namespace BasculaInventario
             bd.conexion.Close();
             this.Close();
         }
+
+        private void txtConfirmacion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

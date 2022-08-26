@@ -39,9 +39,10 @@
             // lblTurnos
             // 
             this.lblTurnos.AutoSize = true;
-            this.lblTurnos.Location = new System.Drawing.Point(12, 47);
+            this.lblTurnos.Location = new System.Drawing.Point(16, 58);
+            this.lblTurnos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTurnos.Name = "lblTurnos";
-            this.lblTurnos.Size = new System.Drawing.Size(51, 13);
+            this.lblTurnos.Size = new System.Drawing.Size(68, 17);
             this.lblTurnos.TabIndex = 9;
             this.lblTurnos.Text = "Usuarios:";
             this.lblTurnos.Click += new System.EventHandler(this.lblTurnos_Click);
@@ -49,34 +50,38 @@
             // gridUsuarios
             // 
             this.gridUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridUsuarios.Location = new System.Drawing.Point(12, 66);
+            this.gridUsuarios.Location = new System.Drawing.Point(16, 81);
+            this.gridUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridUsuarios.Name = "gridUsuarios";
-            this.gridUsuarios.Size = new System.Drawing.Size(576, 121);
+            this.gridUsuarios.Size = new System.Drawing.Size(472, 149);
             this.gridUsuarios.TabIndex = 8;
             // 
             // btnEliminarUsuario
             // 
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(198, 12);
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(264, 15);
+            this.btnEliminarUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminarUsuario.Name = "btnEliminarUsuario";
-            this.btnEliminarUsuario.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarUsuario.Size = new System.Drawing.Size(100, 28);
             this.btnEliminarUsuario.TabIndex = 7;
             this.btnEliminarUsuario.Text = "Eliminar";
             this.btnEliminarUsuario.UseVisualStyleBackColor = true;
             // 
             // btnEditarUsuario
             // 
-            this.btnEditarUsuario.Location = new System.Drawing.Point(104, 12);
+            this.btnEditarUsuario.Location = new System.Drawing.Point(139, 15);
+            this.btnEditarUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditarUsuario.Name = "btnEditarUsuario";
-            this.btnEditarUsuario.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarUsuario.Size = new System.Drawing.Size(100, 28);
             this.btnEditarUsuario.TabIndex = 6;
             this.btnEditarUsuario.Text = "Editar";
             this.btnEditarUsuario.UseVisualStyleBackColor = true;
             // 
             // btnAgregarUsuario
             // 
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(12, 13);
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(16, 16);
+            this.btnAgregarUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
-            this.btnAgregarUsuario.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(100, 28);
             this.btnAgregarUsuario.TabIndex = 5;
             this.btnAgregarUsuario.Text = "Agregar";
             this.btnAgregarUsuario.UseVisualStyleBackColor = true;
@@ -84,14 +89,15 @@
             // 
             // Usuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 204);
+            this.ClientSize = new System.Drawing.Size(504, 251);
             this.Controls.Add(this.lblTurnos);
             this.Controls.Add(this.gridUsuarios);
             this.Controls.Add(this.btnEliminarUsuario);
             this.Controls.Add(this.btnEditarUsuario);
             this.Controls.Add(this.btnAgregarUsuario);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Usuarios";
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Usuarios_Load);

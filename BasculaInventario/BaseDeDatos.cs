@@ -22,6 +22,24 @@ namespace BasculaInventario
             conexion = new SqlConnection($"Server={parametros["hostSQLServer"]}\\{parametros["instancia"]}; Database={parametros["basededatos"]}; User Id={parametros["userSQL"]}; Password={parametros["passSQL"]} ; MultipleActiveResultSets=true");
             conexion.Open();
         }
+        // Parametros para conexion a SQL
+        public static void GuardaParametrosSQLServer(
+            string hostSQLServer = "",
+            string instancia = "",
+            string basededatos = "",
+            string userSQL = "",
+            string passSQL = ""
+            )
+        {
+            using (StreamWriter writer = new StreamWriter("C:/Temp/param.txt"))
+            {
+                writer.WriteLine("hostSQLServer = " + hostSQLServer);
+                writer.WriteLine("instancia = " + instancia);
+                writer.WriteLine("basededatos = " + basededatos);
+                writer.WriteLine("userSQL = " + userSQL);
+                writer.WriteLine("passSQL = " + passSQL);
+            }
+        }
 
         // METODOS PARA TABLA DE TURNOS
         // Metodo para consultar turnos
@@ -64,7 +82,7 @@ namespace BasculaInventario
             SqlDataReader reader;
             try
             {
-                string query = $"SELECT * FROM usuarios";
+                string query = $"SELECT usuario, nombreUsuario, perfil FROM usuarios";
                 SqlCommand command = new SqlCommand(query, conexion);
                 reader = command.ExecuteReader();
                 return reader;
@@ -117,6 +135,176 @@ namespace BasculaInventario
             {
                 MessageBox.Show("Error: \n" + ex.Message);
                 return false;
+            }
+        }
+
+        // METODOS PARA LA TABLA DE ADITIVOS
+        // Metodo para consultar aditivos
+        public SqlDataReader ConsultarAditivos()
+        {
+            SqlDataReader reader;
+            try
+            {
+                string query = $"SELECT * perfil FROM aditivos";
+                SqlCommand command = new SqlCommand(query, conexion);
+                reader = command.ExecuteReader();
+                return reader;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+                return reader = null;
+            }
+        }
+        // Metodo para agregar Aditivos
+        public void AgregarAditivo(string descAditivo)
+        {
+            try
+            {
+                string query = $"INSERT INTO aditivos (descAditivo) VALUES('{descAditivo}')";
+                SqlCommand command = new SqlCommand(query, conexion);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Aditivo agregado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+
+        // METODOS PARA LA TABLA DE COLORES
+        // Metodo para consultar colores
+        public SqlDataReader ConsultarColores()
+        {
+            SqlDataReader reader;
+            try
+            {
+                string query = $"SELECT * FROM colores";
+                SqlCommand command = new SqlCommand(query, conexion);
+                reader = command.ExecuteReader();
+                return reader;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+                return reader = null;
+            }
+        }
+        // Metodo para agregar color
+        public void AgregarColor(string color, string descColor)
+        {
+            try
+            {
+                string query = $"INSERT INTO colores (color,descColor) VALUES('{color}', '{descColor}')";
+                SqlCommand command = new SqlCommand(query, conexion);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Aditivo agregado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+
+        // METODOS PARA LA TABLA DE MAQUINAS
+        // Metodo para consultar maquinas
+        public SqlDataReader ConsultarMaquinas()
+        {
+            SqlDataReader reader;
+            try
+            {
+                string query = $"SELECT * FROM maquinas";
+                SqlCommand command = new SqlCommand(query, conexion);
+                reader = command.ExecuteReader();
+                return reader;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+                return reader = null;
+            }
+        }
+        // Metodo para agregar maquinas
+        public void AgregarMaquina(string numeroMaquina, string descMaquina)
+        {
+            try
+            {
+                string query = $"INSERT INTO colores (numeroMaquina,descMaquina) VALUES('{numeroMaquina}', '{descMaquina}')";
+                SqlCommand command = new SqlCommand(query, conexion);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Maquina agregada satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+
+        // METODOS PARA LA TABLA DE MAQUINAS
+        // Metodo para consultar maquinas
+        public SqlDataReader ConsultarChoferes()
+        {
+            SqlDataReader reader;
+            try
+            {
+                string query = $"SELECT * FROM choferes";
+                SqlCommand command = new SqlCommand(query, conexion);
+                reader = command.ExecuteReader();
+                return reader;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+                return reader = null;
+            }
+        }
+        // Metodo para agregar maquinas
+        public void AgregarChofer(string nombreChofer, string licenciaChofer)
+        {
+            try
+            {
+                string query = $"INSERT INTO choferes (nombreChofer,licenciaChofer) VALUES('{nombreChofer}', '{licenciaChofer}')";
+                SqlCommand command = new SqlCommand(query, conexion);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Chofer agregado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+
+        // METODOS PARA LA TABLA DE VEHICULOS
+        // Metodo para consultar vehiculos
+        public SqlDataReader ConsultarVehiculos()
+        {
+            SqlDataReader reader;
+            try
+            {
+                string query = $"SELECT * FROM vehiculos";
+                SqlCommand command = new SqlCommand(query, conexion);
+                reader = command.ExecuteReader();
+                return reader;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+                return reader = null;
+            }
+        }
+        // Metodo para agregar vehiculos
+        public void AgregarVehiculo(string descVehiculo, string placas)
+        {
+            try
+            {
+                string query = $"INSERT INTO choferes (descVehiculo,placasVehiculo) VALUES('{descVehiculo}', '{placas}')";
+                SqlCommand command = new SqlCommand(query, conexion);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Vehiculo agregado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
             }
         }
     }

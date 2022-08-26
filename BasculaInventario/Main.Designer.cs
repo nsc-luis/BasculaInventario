@@ -30,20 +30,20 @@
         {
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.cATALOGOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.coloresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aditivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.operadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.maquinasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trasporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aditivosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.coloresMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maquinasMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.choferesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vehiculosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oPERACIÓNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPesoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenDeTrabajoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONFIGURACIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.conexionABDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turnosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conexionABDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
@@ -58,59 +58,64 @@
             this.salirMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.mainMenu.Size = new System.Drawing.Size(500, 24);
+            this.mainMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.mainMenu.Size = new System.Drawing.Size(667, 28);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.Text = "mainMenu";
             // 
             // cATALOGOSToolStripMenuItem
             // 
             this.cATALOGOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aditivosToolStripMenuItem,
-            this.coloresToolStripMenuItem,
-            this.productosToolStripMenuItem,
-            this.maquinasToolStripMenuItem,
-            this.operadoresToolStripMenuItem,
-            this.trasporteToolStripMenuItem});
+            this.aditivosMenuItem,
+            this.coloresMenuItem,
+            this.productosMenuItem,
+            this.maquinasMenuItem,
+            this.choferesMenuItem,
+            this.vehiculosMenuItem});
             this.cATALOGOSToolStripMenuItem.Name = "cATALOGOSToolStripMenuItem";
-            this.cATALOGOSToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.cATALOGOSToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.cATALOGOSToolStripMenuItem.Text = "CATALOGOS";
             // 
-            // coloresToolStripMenuItem
+            // aditivosMenuItem
             // 
-            this.coloresToolStripMenuItem.Name = "coloresToolStripMenuItem";
-            this.coloresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.coloresToolStripMenuItem.Text = "Colores";
+            this.aditivosMenuItem.Name = "aditivosMenuItem";
+            this.aditivosMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.aditivosMenuItem.Text = "Aditivos";
+            this.aditivosMenuItem.Click += new System.EventHandler(this.aditivosMenuItem_Click);
             // 
-            // aditivosToolStripMenuItem
+            // coloresMenuItem
             // 
-            this.aditivosToolStripMenuItem.Name = "aditivosToolStripMenuItem";
-            this.aditivosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aditivosToolStripMenuItem.Text = "Aditivos";
+            this.coloresMenuItem.Name = "coloresMenuItem";
+            this.coloresMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.coloresMenuItem.Text = "Colores";
+            this.coloresMenuItem.Click += new System.EventHandler(this.coloresMenuItem_Click);
             // 
-            // productosToolStripMenuItem
+            // productosMenuItem
             // 
-            this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.productosToolStripMenuItem.Text = "Productos";
+            this.productosMenuItem.Name = "productosMenuItem";
+            this.productosMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.productosMenuItem.Text = "Productos";
             // 
-            // operadoresToolStripMenuItem
+            // maquinasMenuItem
             // 
-            this.operadoresToolStripMenuItem.Name = "operadoresToolStripMenuItem";
-            this.operadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.operadoresToolStripMenuItem.Text = "Choferes";
+            this.maquinasMenuItem.Name = "maquinasMenuItem";
+            this.maquinasMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.maquinasMenuItem.Text = "Maquinas";
+            this.maquinasMenuItem.Click += new System.EventHandler(this.maquinasMenuItem_Click);
             // 
-            // maquinasToolStripMenuItem
+            // choferesMenuItem
             // 
-            this.maquinasToolStripMenuItem.Name = "maquinasToolStripMenuItem";
-            this.maquinasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.maquinasToolStripMenuItem.Text = "Maquinas";
+            this.choferesMenuItem.Name = "choferesMenuItem";
+            this.choferesMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.choferesMenuItem.Text = "Choferes";
+            this.choferesMenuItem.Click += new System.EventHandler(this.choferesMenuItem_Click);
             // 
-            // trasporteToolStripMenuItem
+            // vehiculosMenuItem
             // 
-            this.trasporteToolStripMenuItem.Name = "trasporteToolStripMenuItem";
-            this.trasporteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.trasporteToolStripMenuItem.Text = "Vehiculos";
+            this.vehiculosMenuItem.Name = "vehiculosMenuItem";
+            this.vehiculosMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.vehiculosMenuItem.Text = "Vehiculos";
+            this.vehiculosMenuItem.Click += new System.EventHandler(this.vehiculosMenuItem_Click);
             // 
             // oPERACIÓNToolStripMenuItem
             // 
@@ -119,25 +124,25 @@
             this.ordenDeTrabajoToolStripMenuItem,
             this.salidasToolStripMenuItem});
             this.oPERACIÓNToolStripMenuItem.Name = "oPERACIÓNToolStripMenuItem";
-            this.oPERACIÓNToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.oPERACIÓNToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.oPERACIÓNToolStripMenuItem.Text = "OPERACION";
             // 
             // registrarPesoToolStripMenuItem
             // 
             this.registrarPesoToolStripMenuItem.Name = "registrarPesoToolStripMenuItem";
-            this.registrarPesoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarPesoToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.registrarPesoToolStripMenuItem.Text = "Registrar peso";
             // 
             // ordenDeTrabajoToolStripMenuItem
             // 
             this.ordenDeTrabajoToolStripMenuItem.Name = "ordenDeTrabajoToolStripMenuItem";
-            this.ordenDeTrabajoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ordenDeTrabajoToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.ordenDeTrabajoToolStripMenuItem.Text = "Orden de trabajo";
             // 
             // salidasToolStripMenuItem
             // 
             this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
-            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.salidasToolStripMenuItem.Text = "Salidas";
             // 
             // cONFIGURACIONToolStripMenuItem
@@ -147,44 +152,45 @@
             this.usuariosMenuItem,
             this.conexionABDToolStripMenuItem});
             this.cONFIGURACIONToolStripMenuItem.Name = "cONFIGURACIONToolStripMenuItem";
-            this.cONFIGURACIONToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
+            this.cONFIGURACIONToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
             this.cONFIGURACIONToolStripMenuItem.Text = "CONFIGURACION";
-            // 
-            // conexionABDToolStripMenuItem
-            // 
-            this.conexionABDToolStripMenuItem.Name = "conexionABDToolStripMenuItem";
-            this.conexionABDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.conexionABDToolStripMenuItem.Text = "Conexion a BD";
-            // 
-            // usuariosMenuItem
-            // 
-            this.usuariosMenuItem.Name = "usuariosMenuItem";
-            this.usuariosMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.usuariosMenuItem.Text = "Usuarios";
-            this.usuariosMenuItem.Click += new System.EventHandler(this.usuariosMenuItem_Click);
             // 
             // turnosMenuItem
             // 
             this.turnosMenuItem.Name = "turnosMenuItem";
-            this.turnosMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.turnosMenuItem.Size = new System.Drawing.Size(182, 26);
             this.turnosMenuItem.Text = "Turnos";
             this.turnosMenuItem.Click += new System.EventHandler(this.turnosMenuItem_Click);
+            // 
+            // usuariosMenuItem
+            // 
+            this.usuariosMenuItem.Name = "usuariosMenuItem";
+            this.usuariosMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.usuariosMenuItem.Text = "Usuarios";
+            this.usuariosMenuItem.Click += new System.EventHandler(this.usuariosMenuItem_Click);
+            // 
+            // conexionABDToolStripMenuItem
+            // 
+            this.conexionABDToolStripMenuItem.Name = "conexionABDToolStripMenuItem";
+            this.conexionABDToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.conexionABDToolStripMenuItem.Text = "Conexion a BD";
+            this.conexionABDToolStripMenuItem.Click += new System.EventHandler(this.conexionABDToolStripMenuItem_Click);
             // 
             // salirMenuItem
             // 
             this.salirMenuItem.Name = "salirMenuItem";
-            this.salirMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.salirMenuItem.Size = new System.Drawing.Size(59, 24);
             this.salirMenuItem.Text = "SALIR";
             this.salirMenuItem.Click += new System.EventHandler(this.salirMenuItem_Click);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 311);
+            this.ClientSize = new System.Drawing.Size(667, 383);
             this.Controls.Add(this.mainMenu);
             this.MainMenuStrip = this.mainMenu;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmMain";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.frmMain_Load);
@@ -199,12 +205,12 @@
 
         private System.Windows.Forms.MenuStrip mainMenu;
         private System.Windows.Forms.ToolStripMenuItem cATALOGOSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem coloresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aditivosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem operadoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem maquinasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem trasporteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem coloresMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aditivosMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productosMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem choferesMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem maquinasMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vehiculosMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oPERACIÓNToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordenDeTrabajoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salidasToolStripMenuItem;

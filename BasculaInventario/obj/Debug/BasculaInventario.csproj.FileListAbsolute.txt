@@ -13,3 +13,14 @@ C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\Bascula
 C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.FrmUsuario.resources
 C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.Usuarios.resources
 C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.Login.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.ParamSQL.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.Aditivos.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.frmAditivo.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.Colores.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.frmColor.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.frmMaquina.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.Maquinas.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.Choferes.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.frmChofer.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.frmVehiculo.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.Vehiculos.resources
