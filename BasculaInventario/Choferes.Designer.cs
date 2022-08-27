@@ -39,48 +39,43 @@
             // lblAditivos
             // 
             this.lblAditivos.AutoSize = true;
-            this.lblAditivos.Location = new System.Drawing.Point(13, 52);
-            this.lblAditivos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAditivos.Location = new System.Drawing.Point(10, 42);
             this.lblAditivos.Name = "lblAditivos";
-            this.lblAditivos.Size = new System.Drawing.Size(69, 17);
+            this.lblAditivos.Size = new System.Drawing.Size(52, 13);
             this.lblAditivos.TabIndex = 14;
             this.lblAditivos.Text = "Choferes:";
             // 
             // gridChoferes
             // 
             this.gridChoferes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridChoferes.Location = new System.Drawing.Point(13, 75);
-            this.gridChoferes.Margin = new System.Windows.Forms.Padding(4);
+            this.gridChoferes.Location = new System.Drawing.Point(10, 61);
             this.gridChoferes.Name = "gridChoferes";
-            this.gridChoferes.Size = new System.Drawing.Size(348, 149);
+            this.gridChoferes.Size = new System.Drawing.Size(261, 121);
             this.gridChoferes.TabIndex = 13;
             // 
             // btnEliminarChofer
             // 
-            this.btnEliminarChofer.Location = new System.Drawing.Point(261, 9);
-            this.btnEliminarChofer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminarChofer.Location = new System.Drawing.Point(196, 7);
             this.btnEliminarChofer.Name = "btnEliminarChofer";
-            this.btnEliminarChofer.Size = new System.Drawing.Size(100, 28);
+            this.btnEliminarChofer.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarChofer.TabIndex = 12;
             this.btnEliminarChofer.Text = "Eliminar";
             this.btnEliminarChofer.UseVisualStyleBackColor = true;
             // 
             // btnEditarChofer
             // 
-            this.btnEditarChofer.Location = new System.Drawing.Point(136, 9);
-            this.btnEditarChofer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditarChofer.Location = new System.Drawing.Point(102, 7);
             this.btnEditarChofer.Name = "btnEditarChofer";
-            this.btnEditarChofer.Size = new System.Drawing.Size(100, 28);
+            this.btnEditarChofer.Size = new System.Drawing.Size(75, 23);
             this.btnEditarChofer.TabIndex = 11;
             this.btnEditarChofer.Text = "Editar";
             this.btnEditarChofer.UseVisualStyleBackColor = true;
             // 
             // btnAgregarChofer
             // 
-            this.btnAgregarChofer.Location = new System.Drawing.Point(13, 10);
-            this.btnAgregarChofer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregarChofer.Location = new System.Drawing.Point(10, 8);
             this.btnAgregarChofer.Name = "btnAgregarChofer";
-            this.btnAgregarChofer.Size = new System.Drawing.Size(100, 28);
+            this.btnAgregarChofer.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarChofer.TabIndex = 10;
             this.btnAgregarChofer.Text = "Agregar";
             this.btnAgregarChofer.UseVisualStyleBackColor = true;
@@ -88,16 +83,18 @@
             // 
             // Choferes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 238);
+            this.ClientSize = new System.Drawing.Size(284, 193);
             this.Controls.Add(this.lblAditivos);
             this.Controls.Add(this.gridChoferes);
             this.Controls.Add(this.btnEliminarChofer);
             this.Controls.Add(this.btnEditarChofer);
             this.Controls.Add(this.btnAgregarChofer);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Choferes";
             this.Text = "Choferes";
+            this.Load += new System.EventHandler(this.Choferes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridChoferes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

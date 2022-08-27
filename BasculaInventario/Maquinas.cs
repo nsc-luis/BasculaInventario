@@ -25,7 +25,11 @@ namespace BasculaInventario
 
         private void Maquinas_Load(object sender, EventArgs e)
         {
-
+            BaseDeDatos bd = new BaseDeDatos();
+            DataTable dt = new DataTable();
+            dt.Load(bd.ConsultarMaquinas());
+            gridMaquinas.DataSource = dt;
+            bd.conexion.Close();
         }
     }
 }

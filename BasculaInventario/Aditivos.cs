@@ -22,5 +22,14 @@ namespace BasculaInventario
             frmAditivo frmAditivo = new frmAditivo();
             frmAditivo.Show();
         }
+
+        private void Aditivos_Load(object sender, EventArgs e)
+        {
+            BaseDeDatos bd = new BaseDeDatos();
+            DataTable dt = new DataTable();
+            dt.Load(bd.ConsultarAditivos());
+            gridAditivos.DataSource = dt;
+            bd.conexion.Close();
+        }
     }
 }

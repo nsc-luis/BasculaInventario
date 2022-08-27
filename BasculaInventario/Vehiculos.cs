@@ -22,5 +22,14 @@ namespace BasculaInventario
             frmVehiculo frmVehiculo = new frmVehiculo();
             frmVehiculo.Show();
         }
+
+        private void Vehiculos_Load(object sender, EventArgs e)
+        {
+            BaseDeDatos bd = new BaseDeDatos();
+            DataTable dt = new DataTable();
+            dt.Load(bd.ConsultarVehiculos());
+            gridVehiculos.DataSource = dt;
+            bd.conexion.Close();
+        }
     }
 }

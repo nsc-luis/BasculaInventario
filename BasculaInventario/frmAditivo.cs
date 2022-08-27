@@ -16,5 +16,20 @@ namespace BasculaInventario
         {
             InitializeComponent();
         }
+
+        private void btnGuardarAditivo_Click(object sender, EventArgs e)
+        {
+            if (txtDescAditivo.Text != "")
+            {
+                BaseDeDatos bd = new BaseDeDatos();
+                bd.AgregarAditivo(txtDescAditivo.Text);
+                bd.conexion.Close();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error: \n Debes ingresar una descripcion para el aditivo.");
+            }
+        }
     }
 }

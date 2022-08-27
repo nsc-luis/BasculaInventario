@@ -16,5 +16,20 @@ namespace BasculaInventario
         {
             InitializeComponent();
         }
+
+        private void btnGuardarChofer_Click(object sender, EventArgs e)
+        {
+            if (txtNombreChofer.Text != "")
+            {
+                BaseDeDatos bd = new BaseDeDatos();
+                bd.AgregarChofer(txtNombreChofer.Text, txtLicenciaChofer.Text);
+                bd.conexion.Close();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error: \n Debes ingresar el nombre del chofer.");
+            }
+        }
     }
 }

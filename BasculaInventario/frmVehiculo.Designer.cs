@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnGuardarPlacas = new System.Windows.Forms.Button();
-            this.txtDescAditivo = new System.Windows.Forms.TextBox();
+            this.txtDescVehiculo = new System.Windows.Forms.TextBox();
             this.lblDescVehiculo = new System.Windows.Forms.Label();
             this.lblPlacas = new System.Windows.Forms.Label();
             this.txtPlacas = new System.Windows.Forms.TextBox();
@@ -37,58 +37,59 @@
             // 
             // btnGuardarPlacas
             // 
-            this.btnGuardarPlacas.Location = new System.Drawing.Point(109, 98);
-            this.btnGuardarPlacas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardarPlacas.Location = new System.Drawing.Point(82, 80);
             this.btnGuardarPlacas.Name = "btnGuardarPlacas";
-            this.btnGuardarPlacas.Size = new System.Drawing.Size(100, 28);
+            this.btnGuardarPlacas.Size = new System.Drawing.Size(75, 23);
             this.btnGuardarPlacas.TabIndex = 8;
             this.btnGuardarPlacas.Text = "Guardar";
             this.btnGuardarPlacas.UseVisualStyleBackColor = true;
+            this.btnGuardarPlacas.Click += new System.EventHandler(this.btnGuardarPlacas_Click);
             // 
-            // txtDescAditivo
+            // txtDescVehiculo
             // 
-            this.txtDescAditivo.Location = new System.Drawing.Point(109, 13);
-            this.txtDescAditivo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDescAditivo.Name = "txtDescAditivo";
-            this.txtDescAditivo.Size = new System.Drawing.Size(221, 22);
-            this.txtDescAditivo.TabIndex = 7;
+            this.txtDescVehiculo.Location = new System.Drawing.Point(82, 11);
+            this.txtDescVehiculo.Name = "txtDescVehiculo";
+            this.txtDescVehiculo.Size = new System.Drawing.Size(167, 20);
+            this.txtDescVehiculo.TabIndex = 7;
             // 
             // lblDescVehiculo
             // 
             this.lblDescVehiculo.AutoSize = true;
-            this.lblDescVehiculo.Location = new System.Drawing.Point(14, 21);
-            this.lblDescVehiculo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescVehiculo.Location = new System.Drawing.Point(10, 17);
             this.lblDescVehiculo.Name = "lblDescVehiculo";
-            this.lblDescVehiculo.Size = new System.Drawing.Size(86, 17);
+            this.lblDescVehiculo.Size = new System.Drawing.Size(66, 13);
             this.lblDescVehiculo.TabIndex = 6;
             this.lblDescVehiculo.Text = "Descripcion:";
             // 
             // lblPlacas
             // 
             this.lblPlacas.AutoSize = true;
-            this.lblPlacas.Location = new System.Drawing.Point(17, 60);
+            this.lblPlacas.Location = new System.Drawing.Point(13, 49);
+            this.lblPlacas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPlacas.Name = "lblPlacas";
-            this.lblPlacas.Size = new System.Drawing.Size(54, 17);
+            this.lblPlacas.Size = new System.Drawing.Size(42, 13);
             this.lblPlacas.TabIndex = 9;
             this.lblPlacas.Text = "Placas:";
             // 
             // txtPlacas
             // 
-            this.txtPlacas.Location = new System.Drawing.Point(109, 54);
+            this.txtPlacas.Location = new System.Drawing.Point(82, 44);
+            this.txtPlacas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPlacas.Name = "txtPlacas";
-            this.txtPlacas.Size = new System.Drawing.Size(132, 22);
+            this.txtPlacas.Size = new System.Drawing.Size(100, 20);
             this.txtPlacas.TabIndex = 10;
             // 
             // frmVehiculo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 141);
+            this.ClientSize = new System.Drawing.Size(268, 115);
             this.Controls.Add(this.txtPlacas);
             this.Controls.Add(this.lblPlacas);
             this.Controls.Add(this.btnGuardarPlacas);
-            this.Controls.Add(this.txtDescAditivo);
+            this.Controls.Add(this.txtDescVehiculo);
             this.Controls.Add(this.lblDescVehiculo);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmVehiculo";
             this.Text = "frmVehiculo";
             this.ResumeLayout(false);
@@ -99,7 +100,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnGuardarPlacas;
-        private System.Windows.Forms.TextBox txtDescAditivo;
+        private System.Windows.Forms.TextBox txtDescVehiculo;
         private System.Windows.Forms.Label lblDescVehiculo;
         private System.Windows.Forms.Label lblPlacas;
         private System.Windows.Forms.TextBox txtPlacas;

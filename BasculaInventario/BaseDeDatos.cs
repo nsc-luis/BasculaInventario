@@ -145,7 +145,7 @@ namespace BasculaInventario
             SqlDataReader reader;
             try
             {
-                string query = $"SELECT * perfil FROM aditivos";
+                string query = $"SELECT * FROM aditivos";
                 SqlCommand command = new SqlCommand(query, conexion);
                 reader = command.ExecuteReader();
                 return reader;
@@ -191,14 +191,14 @@ namespace BasculaInventario
             }
         }
         // Metodo para agregar color
-        public void AgregarColor(string color, string descColor)
+        public void AgregarColor(string color)
         {
             try
             {
-                string query = $"INSERT INTO colores (color,descColor) VALUES('{color}', '{descColor}')";
+                string query = $"INSERT INTO colores (color) VALUES('{color}')";
                 SqlCommand command = new SqlCommand(query, conexion);
                 command.ExecuteNonQuery();
-                MessageBox.Show("Aditivo agregado satisfactoriamente.");
+                MessageBox.Show("Color agregado satisfactoriamente.");
             }
             catch (Exception ex)
             {
@@ -229,7 +229,7 @@ namespace BasculaInventario
         {
             try
             {
-                string query = $"INSERT INTO colores (numeroMaquina,descMaquina) VALUES('{numeroMaquina}', '{descMaquina}')";
+                string query = $"INSERT INTO maquinas (numeroMaquina,descMaquina) VALUES('{numeroMaquina}', '{descMaquina}')";
                 SqlCommand command = new SqlCommand(query, conexion);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Maquina agregada satisfactoriamente.");
@@ -297,7 +297,7 @@ namespace BasculaInventario
         {
             try
             {
-                string query = $"INSERT INTO choferes (descVehiculo,placasVehiculo) VALUES('{descVehiculo}', '{placas}')";
+                string query = $"INSERT INTO vehiculos (descVehiculo,placasVehiculo) VALUES('{descVehiculo}', '{placas}')";
                 SqlCommand command = new SqlCommand(query, conexion);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Vehiculo agregado satisfactoriamente.");

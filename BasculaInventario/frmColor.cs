@@ -16,5 +16,20 @@ namespace BasculaInventario
         {
             InitializeComponent();
         }
+
+        private void btnGuardarColor_Click(object sender, EventArgs e)
+        {
+            if (txtDescColor.Text != "")
+            {
+                BaseDeDatos bd = new BaseDeDatos();
+                bd.AgregarColor(txtDescColor.Text);
+                bd.conexion.Close();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error: \n Debes ingresar el color/descripcion.");
+            }
+        }
     }
 }

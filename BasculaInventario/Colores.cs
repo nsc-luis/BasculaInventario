@@ -22,5 +22,14 @@ namespace BasculaInventario
             frmColor frmColor = new frmColor();
             frmColor.Show();
         }
+
+        private void Colores_Load(object sender, EventArgs e)
+        {
+            BaseDeDatos bd = new BaseDeDatos();
+            DataTable dt = new DataTable();
+            dt.Load(bd.ConsultarColores());
+            gridColores.DataSource = dt;
+            bd.conexion.Close();
+        }
     }
 }

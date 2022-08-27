@@ -16,5 +16,20 @@ namespace BasculaInventario
         {
             InitializeComponent();
         }
+
+        private void btnGuardarPlacas_Click(object sender, EventArgs e)
+        {
+            if (txtDescVehiculo.Text != "")
+            {
+                BaseDeDatos bd = new BaseDeDatos();
+                bd.AgregarVehiculo(txtDescVehiculo.Text, txtPlacas.Text);
+                bd.conexion.Close();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error: \n Debes ingresar al menos la descripcion del vehiculo.");
+            }
+        }
     }
 }
