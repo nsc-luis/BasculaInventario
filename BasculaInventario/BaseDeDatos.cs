@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -13,6 +14,9 @@ namespace BasculaInventario
     {
         // CONEXION A LA BASE DE DATOS
         public SqlConnection conexion;
+        SqlDataAdapter adapter;
+        SqlCommand cmd;
+
         public BaseDeDatos()
         {
             var parametros = File.ReadAllLines("C:/Temp/param.txt")
@@ -43,20 +47,20 @@ namespace BasculaInventario
 
         // METODOS PARA TABLA DE TURNOS
         // Metodo para consultar turnos
-        public SqlDataReader ConsultarTurnos()
+        public DataTable ConsultarTurnos()
         {
-            SqlDataReader reader;
+            DataTable dt = new DataTable();
             try
             {
                 string query = $"SELECT * FROM turnos";
-                SqlCommand command = new SqlCommand(query, conexion);
-                reader = command.ExecuteReader();
-                return reader;
+                adapter = new SqlDataAdapter(query, conexion);
+                adapter.Fill(dt);
+                return dt;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: \n" + ex.Message);
-                return reader = null;
+                return dt = null;
             }
         }
         // Metodo para agregar turnos
@@ -65,9 +69,39 @@ namespace BasculaInventario
             try
             {
                 string query = $"INSERT INTO turnos (descTurno) VALUES('{descTruno}')";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Turno agregado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para editar turnos
+        public void EditarTurno(int id, string descTurno)
+        {
+            try
+            {
+                string query = $"UPDATE turnos set descTurno = '{descTurno}' WHERE idTurno = {id}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Turno guardado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para eliminar Aditivos
+        public void EliminarTurno(int id)
+        {
+            try
+            {
+                string query = $"DELETE FROM turnos WHERE idTurno = {id}";
                 SqlCommand command = new SqlCommand(query, conexion);
                 command.ExecuteNonQuery();
-                MessageBox.Show("Turno agregado satisfactoriamente.");
+                MessageBox.Show("Turno eliminado satisfactoriamente.");
             }
             catch (Exception ex)
             {
@@ -77,20 +111,20 @@ namespace BasculaInventario
 
         // METODOS PARA LA TABLA DE USUARIOS
         // Metodo para consultar usuarios
-        public SqlDataReader ConsultarUsuarios()
+        public DataTable ConsultarUsuarios()
         {
-            SqlDataReader reader;
+            DataTable dt = new DataTable();
             try
             {
-                string query = $"SELECT usuario, nombreUsuario, perfil FROM usuarios";
-                SqlCommand command = new SqlCommand(query, conexion);
-                reader = command.ExecuteReader();
-                return reader;
+                string query = $"SELECT idUsuario, usuario, nombreUsuario, perfil FROM usuarios";
+                adapter = new SqlDataAdapter(query, conexion);
+                adapter.Fill(dt);
+                return dt;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: \n" + ex.Message);
-                return reader = null;
+                return dt = null;
             }
         }
         // Metodo para agregar Usuarios
@@ -107,6 +141,42 @@ namespace BasculaInventario
                 SqlCommand command = new SqlCommand(query, conexion);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Usuario agregado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para editar usuarios
+        public void EditarUsuario(
+            int id,
+            string nombreUsuario,
+            string usuario,
+            string passUsuario,
+            string perfil
+            )
+        {
+            try
+            {
+                string query = $"UPDATE usuarios SET nombreUsuario = '{nombreUsuario}', usuario = '{usuario}', passUsuario = '{passUsuario}', perfil = '{perfil}' WHERE idUsuario = {id}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("El usuario fue actualizado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para eliminar usuarios
+        public void EliminarUsuario(int id)
+        {
+            try
+            {
+                string query = $"DELETE FROM usuarios WHERE idUsuario = {id}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Usuario eliminado satisfactoriamente.");
             }
             catch (Exception ex)
             {
@@ -140,20 +210,20 @@ namespace BasculaInventario
 
         // METODOS PARA LA TABLA DE ADITIVOS
         // Metodo para consultar aditivos
-        public SqlDataReader ConsultarAditivos()
+        public DataTable ConsultarAditivos()
         {
-            SqlDataReader reader;
+            string query = $"SELECT * FROM aditivos";
+            DataTable dt = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conexion);
+            dataAdapter.Fill(dt);
             try
             {
-                string query = $"SELECT * FROM aditivos";
-                SqlCommand command = new SqlCommand(query, conexion);
-                reader = command.ExecuteReader();
-                return reader;
+                return dt;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: \n" + ex.Message);
-                return reader = null;
+                return dt = null;
             }
         }
         // Metodo para agregar Aditivos
@@ -162,9 +232,39 @@ namespace BasculaInventario
             try
             {
                 string query = $"INSERT INTO aditivos (descAditivo) VALUES('{descAditivo}')";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Aditivo agregado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para editar Aditivos
+        public void EditarAditivo(int id, string descAditivo)
+        {
+            try
+            {
+                string query = $"UPDATE aditivos set descAditivo = '{descAditivo}' WHERE idAditivo = {id}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Aditivo guardado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para eliminar Aditivos
+        public void EliminarAditivo(int id)
+        {
+            try
+            {
+                string query = $"DELETE FROM aditivos WHERE idAditivo = {id}";
                 SqlCommand command = new SqlCommand(query, conexion);
                 command.ExecuteNonQuery();
-                MessageBox.Show("Aditivo agregado satisfactoriamente.");
+                MessageBox.Show("Aditivo eliminado satisfactoriamente.");
             }
             catch (Exception ex)
             {
@@ -174,20 +274,21 @@ namespace BasculaInventario
 
         // METODOS PARA LA TABLA DE COLORES
         // Metodo para consultar colores
-        public SqlDataReader ConsultarColores()
+        public DataTable ConsultarColores()
         {
-            SqlDataReader reader;
+            DataTable dt = new DataTable();
             try
             {
                 string query = $"SELECT * FROM colores";
-                SqlCommand command = new SqlCommand(query, conexion);
-                reader = command.ExecuteReader();
-                return reader;
+                adapter = new SqlDataAdapter(query, conexion);
+                adapter.Fill(dt);
+                conexion.Close();
+                return dt;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: \n" + ex.Message);
-                return reader = null;
+                return dt = null;
             }
         }
         // Metodo para agregar color
@@ -196,9 +297,39 @@ namespace BasculaInventario
             try
             {
                 string query = $"INSERT INTO colores (color) VALUES('{color}')";
-                SqlCommand command = new SqlCommand(query, conexion);
-                command.ExecuteNonQuery();
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
                 MessageBox.Show("Color agregado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para actualizar color
+        public void EditartColor(int id, string color)
+        {
+            try
+            {
+                string query = $"UPDATE colores SET color='{color}' WHERE idColor = {id}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Color actualizado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para Eliminar un color
+        public void EliminarColor(int id)
+        {
+            try
+            {
+                string query = $"DELETE FROM colores WHERE idColor = {id}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Color eliminado satisfactoriamente.");
             }
             catch (Exception ex)
             {
@@ -208,24 +339,24 @@ namespace BasculaInventario
 
         // METODOS PARA LA TABLA DE MAQUINAS
         // Metodo para consultar maquinas
-        public SqlDataReader ConsultarMaquinas()
+        public DataTable ConsultarMaquinas()
         {
-            SqlDataReader reader;
+            DataTable dt = new DataTable();
             try
             {
                 string query = $"SELECT * FROM maquinas";
-                SqlCommand command = new SqlCommand(query, conexion);
-                reader = command.ExecuteReader();
-                return reader;
+                adapter = new SqlDataAdapter(query, conexion);
+                adapter.Fill(dt);
+                return dt;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: \n" + ex.Message);
-                return reader = null;
+                return dt = null;
             }
         }
         // Metodo para agregar maquinas
-        public void AgregarMaquina(string numeroMaquina, string descMaquina)
+        public void AgregarMaquina(string numeroMaquina, string descMaquina = "")
         {
             try
             {
@@ -239,34 +370,94 @@ namespace BasculaInventario
                 MessageBox.Show("Error: \n" + ex.Message);
             }
         }
-
-        // METODOS PARA LA TABLA DE MAQUINAS
-        // Metodo para consultar maquinas
-        public SqlDataReader ConsultarChoferes()
+        // Metodo para actualizar la maquina
+        public void EditarMaquina(int id, string noMaquina, string descMaquina = "")
         {
-            SqlDataReader reader;
             try
             {
-                string query = $"SELECT * FROM choferes";
-                SqlCommand command = new SqlCommand(query, conexion);
-                reader = command.ExecuteReader();
-                return reader;
+                string query = $"UPDATE maquinas SET numeroMaquina='{noMaquina}', descMaquina='{descMaquina}' WHERE idMaquina = {id}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Maquina actualizada satisfactoriamente.");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: \n" + ex.Message);
-                return reader = null;
             }
         }
-        // Metodo para agregar maquinas
-        public void AgregarChofer(string nombreChofer, string licenciaChofer)
+        // Metodo para Eliminar una maquina
+        public void EliminarMaquina(int id)
         {
             try
             {
-                string query = $"INSERT INTO choferes (nombreChofer,licenciaChofer) VALUES('{nombreChofer}', '{licenciaChofer}')";
-                SqlCommand command = new SqlCommand(query, conexion);
-                command.ExecuteNonQuery();
+                string query = $"DELETE FROM maquinas WHERE idMaquina = {id}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Maquina eliminado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+
+        // METODOS PARA LA TABLA DE CHOFERES
+        // Metodo para consultar choferes
+        public DataTable ConsultarChoferes()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = $"SELECT * FROM choferes";
+                adapter = new SqlDataAdapter(query, conexion);
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+                return dt = null;
+            }
+        }
+        // Metodo para agregar chofer
+        public void AgregarChofer(string nombreChofer)
+        {
+            try
+            {
+                string query = $"INSERT INTO choferes (nombreChofer) VALUES('{nombreChofer}')";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
                 MessageBox.Show("Chofer agregado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para editar chofer
+        public void EditarChofer(int id, string nombreChofer)
+        {
+            try
+            {
+                string query = $"UPDATE choferes SET nombreChofer = '{nombreChofer}' WHERE idChofer = {id}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Chofer editado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para eliminar chofer
+        public void EliminarChofer(int id)
+        {
+            try
+            {
+                string query = $"DELETE FROM choferes WHERE idChofer = {id}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Chofer eliminado satisfactoriamente.");
             }
             catch (Exception ex)
             {
@@ -276,31 +467,62 @@ namespace BasculaInventario
 
         // METODOS PARA LA TABLA DE VEHICULOS
         // Metodo para consultar vehiculos
-        public SqlDataReader ConsultarVehiculos()
+        public DataTable ConsultarVehiculos()
         {
-            SqlDataReader reader;
+            DataTable dt = new DataTable();
             try
             {
                 string query = $"SELECT * FROM vehiculos";
-                SqlCommand command = new SqlCommand(query, conexion);
-                reader = command.ExecuteReader();
-                return reader;
+                adapter = new SqlDataAdapter(query, conexion);
+                adapter.Fill(dt);
+                return dt;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: \n" + ex.Message);
-                return reader = null;
+                return dt = null;
             }
         }
         // Metodo para agregar vehiculos
-        public void AgregarVehiculo(string descVehiculo, string placas)
+        public void AgregarVehiculo(string descVehiculo, string placas = "")
         {
             try
             {
                 string query = $"INSERT INTO vehiculos (descVehiculo,placasVehiculo) VALUES('{descVehiculo}', '{placas}')";
-                SqlCommand command = new SqlCommand(query, conexion);
-                command.ExecuteNonQuery();
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
                 MessageBox.Show("Vehiculo agregado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para editar el vehiculo
+        public void EditarVehiculo(int id, string descVehiculo, string placas = "")
+        {
+            try
+            {
+                string query = $"UPDATE vehiculos SET descVehiculo='{descVehiculo}', placasVehiculo='{placas}' WHERE idVehiculo = {id}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("El vehiculo se ha editado satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+
+        }
+        // Metodo para eliminar un vehiculo
+        public void EliminarVehiculo(int id)
+        {
+            try
+            {
+                string query = $"DELETE FROM vehiculos WHERE idVehiculo={id}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("El vehiculo se ha eliminado satisfactoriamente.");
             }
             catch (Exception ex)
             {

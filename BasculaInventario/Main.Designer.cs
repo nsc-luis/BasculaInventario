@@ -58,8 +58,8 @@
             this.salirMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.mainMenu.Size = new System.Drawing.Size(667, 28);
+            this.mainMenu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.mainMenu.Size = new System.Drawing.Size(500, 24);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.Text = "mainMenu";
             // 
@@ -73,47 +73,47 @@
             this.choferesMenuItem,
             this.vehiculosMenuItem});
             this.cATALOGOSToolStripMenuItem.Name = "cATALOGOSToolStripMenuItem";
-            this.cATALOGOSToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
+            this.cATALOGOSToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.cATALOGOSToolStripMenuItem.Text = "CATALOGOS";
             // 
             // aditivosMenuItem
             // 
             this.aditivosMenuItem.Name = "aditivosMenuItem";
-            this.aditivosMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.aditivosMenuItem.Size = new System.Drawing.Size(128, 22);
             this.aditivosMenuItem.Text = "Aditivos";
             this.aditivosMenuItem.Click += new System.EventHandler(this.aditivosMenuItem_Click);
             // 
             // coloresMenuItem
             // 
             this.coloresMenuItem.Name = "coloresMenuItem";
-            this.coloresMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.coloresMenuItem.Size = new System.Drawing.Size(128, 22);
             this.coloresMenuItem.Text = "Colores";
             this.coloresMenuItem.Click += new System.EventHandler(this.coloresMenuItem_Click);
             // 
             // productosMenuItem
             // 
             this.productosMenuItem.Name = "productosMenuItem";
-            this.productosMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.productosMenuItem.Size = new System.Drawing.Size(128, 22);
             this.productosMenuItem.Text = "Productos";
             // 
             // maquinasMenuItem
             // 
             this.maquinasMenuItem.Name = "maquinasMenuItem";
-            this.maquinasMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.maquinasMenuItem.Size = new System.Drawing.Size(128, 22);
             this.maquinasMenuItem.Text = "Maquinas";
             this.maquinasMenuItem.Click += new System.EventHandler(this.maquinasMenuItem_Click);
             // 
             // choferesMenuItem
             // 
             this.choferesMenuItem.Name = "choferesMenuItem";
-            this.choferesMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.choferesMenuItem.Size = new System.Drawing.Size(128, 22);
             this.choferesMenuItem.Text = "Choferes";
             this.choferesMenuItem.Click += new System.EventHandler(this.choferesMenuItem_Click);
             // 
             // vehiculosMenuItem
             // 
             this.vehiculosMenuItem.Name = "vehiculosMenuItem";
-            this.vehiculosMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.vehiculosMenuItem.Size = new System.Drawing.Size(128, 22);
             this.vehiculosMenuItem.Text = "Vehiculos";
             this.vehiculosMenuItem.Click += new System.EventHandler(this.vehiculosMenuItem_Click);
             // 
@@ -124,25 +124,25 @@
             this.ordenDeTrabajoToolStripMenuItem,
             this.salidasToolStripMenuItem});
             this.oPERACIÓNToolStripMenuItem.Name = "oPERACIÓNToolStripMenuItem";
-            this.oPERACIÓNToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
+            this.oPERACIÓNToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.oPERACIÓNToolStripMenuItem.Text = "OPERACION";
             // 
             // registrarPesoToolStripMenuItem
             // 
             this.registrarPesoToolStripMenuItem.Name = "registrarPesoToolStripMenuItem";
-            this.registrarPesoToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.registrarPesoToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.registrarPesoToolStripMenuItem.Text = "Registrar peso";
             // 
             // ordenDeTrabajoToolStripMenuItem
             // 
             this.ordenDeTrabajoToolStripMenuItem.Name = "ordenDeTrabajoToolStripMenuItem";
-            this.ordenDeTrabajoToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.ordenDeTrabajoToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.ordenDeTrabajoToolStripMenuItem.Text = "Orden de trabajo";
             // 
             // salidasToolStripMenuItem
             // 
             this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
-            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.salidasToolStripMenuItem.Text = "Salidas";
             // 
             // cONFIGURACIONToolStripMenuItem
@@ -152,45 +152,45 @@
             this.usuariosMenuItem,
             this.conexionABDToolStripMenuItem});
             this.cONFIGURACIONToolStripMenuItem.Name = "cONFIGURACIONToolStripMenuItem";
-            this.cONFIGURACIONToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
+            this.cONFIGURACIONToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
             this.cONFIGURACIONToolStripMenuItem.Text = "CONFIGURACION";
             // 
             // turnosMenuItem
             // 
             this.turnosMenuItem.Name = "turnosMenuItem";
-            this.turnosMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.turnosMenuItem.Size = new System.Drawing.Size(152, 22);
             this.turnosMenuItem.Text = "Turnos";
             this.turnosMenuItem.Click += new System.EventHandler(this.turnosMenuItem_Click);
             // 
             // usuariosMenuItem
             // 
             this.usuariosMenuItem.Name = "usuariosMenuItem";
-            this.usuariosMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.usuariosMenuItem.Size = new System.Drawing.Size(152, 22);
             this.usuariosMenuItem.Text = "Usuarios";
             this.usuariosMenuItem.Click += new System.EventHandler(this.usuariosMenuItem_Click);
             // 
             // conexionABDToolStripMenuItem
             // 
             this.conexionABDToolStripMenuItem.Name = "conexionABDToolStripMenuItem";
-            this.conexionABDToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.conexionABDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.conexionABDToolStripMenuItem.Text = "Conexion a BD";
             this.conexionABDToolStripMenuItem.Click += new System.EventHandler(this.conexionABDToolStripMenuItem_Click);
             // 
             // salirMenuItem
             // 
             this.salirMenuItem.Name = "salirMenuItem";
-            this.salirMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.salirMenuItem.Size = new System.Drawing.Size(49, 20);
             this.salirMenuItem.Text = "SALIR";
             this.salirMenuItem.Click += new System.EventHandler(this.salirMenuItem_Click);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 383);
+            this.ClientSize = new System.Drawing.Size(500, 311);
             this.Controls.Add(this.mainMenu);
             this.MainMenuStrip = this.mainMenu;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMain";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.frmMain_Load);

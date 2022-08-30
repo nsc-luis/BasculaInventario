@@ -14,6 +14,7 @@ namespace BasculaInventario
     {
         public frmMain()
         {
+            //this.BackgroundImage = Properties.Resources.logo;
             InitializeComponent();
         }
 
@@ -81,6 +82,11 @@ namespace BasculaInventario
         {
             Vehiculos vehiculos = new Vehiculos();
             vehiculos.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
