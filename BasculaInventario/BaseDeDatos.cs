@@ -529,5 +529,48 @@ namespace BasculaInventario
                 MessageBox.Show("Error: \n" + ex.Message);
             }
         }
+
+        //METODOS PARA LA TABLA DE PRODUCTOS
+        // Metodo para la consulta de productos
+        public DataTable ConsultarProductos()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = $"SELECT * FROM productos";
+                adapter = new SqlDataAdapter(query, conexion);
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+                return dt;
+            }
+        }
+        // Metodo para agregar productos
+        public void AgregarProducto(
+            string descProducto,int idAditivo,int idColor,string medida,
+            string calibre,int KGxRollo,int metros,string soplo,string bajaDencidad,
+            string linealButen,string antiblock,bool tub,bool ax1l,bool ax2l,
+            bool pp,bool ppRefil)
+        {
+            try
+            {
+                string query = $"INSERT INTO productos (descProducto,idAditivo," +
+                    $"idColor,medida,calibre,KGxRollo,metros,soplo,bajaDencidad," +
+                    $"linealButen,antiblock,tub,ax1l,ax2l,pp,ppRefil) " +
+                    $"VALUES('{descProducto}',{idAditivo},{idColor},'{medida}'," +
+                    $"'{calibre}',{KGxRollo},{metros},'{soplo}','{bajaDencidad}'," +
+                    $"'{linealButen}','{antiblock}',{tub},{ax1l},{ax2l},{pp},{ppRefil})";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("El producto se agrego exitosamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
     }
 }
