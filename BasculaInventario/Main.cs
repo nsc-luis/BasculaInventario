@@ -88,5 +88,17 @@ namespace BasculaInventario
         {
 
         }
+
+        private void ordenDeTrabajoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OrdenesDeTrabajo ordenesDeTrabajo = new OrdenesDeTrabajo();
+            ordenesDeTrabajo.Show();
+        }
+
+        private void productosMenuItem_Click(object sender, EventArgs e)
+        {
+            Productos productos = new Productos();
+            productos.Show();
+        }
     }
 }

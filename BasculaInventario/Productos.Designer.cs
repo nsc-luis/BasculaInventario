@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblProductos = new System.Windows.Forms.Label();
             this.gridProductos = new System.Windows.Forms.DataGridView();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
@@ -81,27 +81,28 @@
             // 
             // gridProductos
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridProductos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridProductos.DefaultCellStyle = dataGridViewCellStyle6;
             this.gridProductos.Location = new System.Drawing.Point(8, 285);
             this.gridProductos.Name = "gridProductos";
             this.gridProductos.Size = new System.Drawing.Size(706, 121);
             this.gridProductos.TabIndex = 18;
+            this.gridProductos.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridProductos_RowHeaderMouseClick);
             // 
             // btnEliminarProducto
             // 
@@ -111,6 +112,7 @@
             this.btnEliminarProducto.TabIndex = 17;
             this.btnEliminarProducto.Text = "Eliminar";
             this.btnEliminarProducto.UseVisualStyleBackColor = true;
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
             // 
             // btnEditarProducto
             // 
@@ -120,6 +122,7 @@
             this.btnEditarProducto.TabIndex = 16;
             this.btnEditarProducto.Text = "Editar";
             this.btnEditarProducto.UseVisualStyleBackColor = true;
+            this.btnEditarProducto.Click += new System.EventHandler(this.btnEditarProducto_Click);
             // 
             // btnAgregarProducto
             // 
@@ -134,7 +137,7 @@
             // txtDescProducto
             // 
             this.txtDescProducto.Location = new System.Drawing.Point(19, 10);
-            this.txtDescProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescProducto.Name = "txtDescProducto";
             this.txtDescProducto.Size = new System.Drawing.Size(416, 20);
             this.txtDescProducto.TabIndex = 20;
@@ -162,7 +165,7 @@
             // txtCalibre
             // 
             this.txtCalibre.Location = new System.Drawing.Point(158, 58);
-            this.txtCalibre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCalibre.Margin = new System.Windows.Forms.Padding(2);
             this.txtCalibre.Name = "txtCalibre";
             this.txtCalibre.Size = new System.Drawing.Size(137, 20);
             this.txtCalibre.TabIndex = 22;
@@ -180,7 +183,7 @@
             // txtKGxRollo
             // 
             this.txtKGxRollo.Location = new System.Drawing.Point(298, 58);
-            this.txtKGxRollo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKGxRollo.Margin = new System.Windows.Forms.Padding(2);
             this.txtKGxRollo.Name = "txtKGxRollo";
             this.txtKGxRollo.Size = new System.Drawing.Size(137, 20);
             this.txtKGxRollo.TabIndex = 24;
@@ -198,7 +201,7 @@
             // txtBajaDencidad
             // 
             this.txtBajaDencidad.Location = new System.Drawing.Point(18, 109);
-            this.txtBajaDencidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBajaDencidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtBajaDencidad.Name = "txtBajaDencidad";
             this.txtBajaDencidad.Size = new System.Drawing.Size(137, 20);
             this.txtBajaDencidad.TabIndex = 26;
@@ -216,7 +219,7 @@
             // txtLinealButen
             // 
             this.txtLinealButen.Location = new System.Drawing.Point(158, 109);
-            this.txtLinealButen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLinealButen.Margin = new System.Windows.Forms.Padding(2);
             this.txtLinealButen.Name = "txtLinealButen";
             this.txtLinealButen.Size = new System.Drawing.Size(137, 20);
             this.txtLinealButen.TabIndex = 28;
@@ -294,7 +297,7 @@
             // txtMetros
             // 
             this.txtMetros.Location = new System.Drawing.Point(439, 58);
-            this.txtMetros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMetros.Margin = new System.Windows.Forms.Padding(2);
             this.txtMetros.Name = "txtMetros";
             this.txtMetros.Size = new System.Drawing.Size(137, 20);
             this.txtMetros.TabIndex = 38;
@@ -312,7 +315,7 @@
             // txtAntiblock
             // 
             this.txtAntiblock.Location = new System.Drawing.Point(301, 109);
-            this.txtAntiblock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAntiblock.Margin = new System.Windows.Forms.Padding(2);
             this.txtAntiblock.Name = "txtAntiblock";
             this.txtAntiblock.Size = new System.Drawing.Size(137, 20);
             this.txtAntiblock.TabIndex = 48;
@@ -340,7 +343,7 @@
             // txtSoplo
             // 
             this.txtSoplo.Location = new System.Drawing.Point(579, 58);
-            this.txtSoplo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSoplo.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoplo.Name = "txtSoplo";
             this.txtSoplo.Size = new System.Drawing.Size(137, 20);
             this.txtSoplo.TabIndex = 44;
@@ -358,7 +361,7 @@
             // txtMedida
             // 
             this.txtMedida.Location = new System.Drawing.Point(17, 58);
-            this.txtMedida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMedida.Margin = new System.Windows.Forms.Padding(2);
             this.txtMedida.Name = "txtMedida";
             this.txtMedida.Size = new System.Drawing.Size(137, 20);
             this.txtMedida.TabIndex = 50;
@@ -370,7 +373,7 @@
             "SI",
             "NO"});
             this.cmbPP.Location = new System.Drawing.Point(17, 158);
-            this.cmbPP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbPP.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPP.Name = "cmbPP";
             this.cmbPP.Size = new System.Drawing.Size(92, 21);
             this.cmbPP.TabIndex = 52;
@@ -382,7 +385,7 @@
             "SI",
             "NO"});
             this.cmbPPRefil.Location = new System.Drawing.Point(139, 158);
-            this.cmbPPRefil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbPPRefil.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPPRefil.Name = "cmbPPRefil";
             this.cmbPPRefil.Size = new System.Drawing.Size(92, 21);
             this.cmbPPRefil.TabIndex = 53;
@@ -391,7 +394,7 @@
             // 
             this.cmbAditivos.FormattingEnabled = true;
             this.cmbAditivos.Location = new System.Drawing.Point(441, 109);
-            this.cmbAditivos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbAditivos.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAditivos.Name = "cmbAditivos";
             this.cmbAditivos.Size = new System.Drawing.Size(132, 21);
             this.cmbAditivos.TabIndex = 54;
@@ -403,7 +406,7 @@
             "SI",
             "NO"});
             this.cmbAX1L.Location = new System.Drawing.Point(369, 158);
-            this.cmbAX1L.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbAX1L.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAX1L.Name = "cmbAX1L";
             this.cmbAX1L.Size = new System.Drawing.Size(92, 21);
             this.cmbAX1L.TabIndex = 55;
@@ -415,7 +418,7 @@
             "SI",
             "NO"});
             this.cmbAX2L.Location = new System.Drawing.Point(481, 158);
-            this.cmbAX2L.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbAX2L.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAX2L.Name = "cmbAX2L";
             this.cmbAX2L.Size = new System.Drawing.Size(92, 21);
             this.cmbAX2L.TabIndex = 56;
@@ -427,7 +430,7 @@
             "SI",
             "NO"});
             this.cmbTUB.Location = new System.Drawing.Point(257, 158);
-            this.cmbTUB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTUB.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTUB.Name = "cmbTUB";
             this.cmbTUB.Size = new System.Drawing.Size(92, 21);
             this.cmbTUB.TabIndex = 57;
@@ -436,7 +439,7 @@
             // 
             this.cmbColores.FormattingEnabled = true;
             this.cmbColores.Location = new System.Drawing.Point(579, 109);
-            this.cmbColores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbColores.Margin = new System.Windows.Forms.Padding(2);
             this.cmbColores.Name = "cmbColores";
             this.cmbColores.Size = new System.Drawing.Size(134, 21);
             this.cmbColores.TabIndex = 58;
@@ -483,7 +486,7 @@
             this.Controls.Add(this.btnEliminarProducto);
             this.Controls.Add(this.btnEditarProducto);
             this.Controls.Add(this.btnAgregarProducto);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Productos";
             this.Text = "Productos";
             ((System.ComponentModel.ISupportInitialize)(this.gridProductos)).EndInit();

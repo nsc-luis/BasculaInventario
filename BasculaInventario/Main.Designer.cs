@@ -45,7 +45,9 @@
             this.usuariosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conexionABDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -93,8 +95,9 @@
             // productosMenuItem
             // 
             this.productosMenuItem.Name = "productosMenuItem";
-            this.productosMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.productosMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productosMenuItem.Text = "Productos";
+            this.productosMenuItem.Click += new System.EventHandler(this.productosMenuItem_Click);
             // 
             // maquinasMenuItem
             // 
@@ -130,19 +133,20 @@
             // registrarPesoToolStripMenuItem
             // 
             this.registrarPesoToolStripMenuItem.Name = "registrarPesoToolStripMenuItem";
-            this.registrarPesoToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.registrarPesoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarPesoToolStripMenuItem.Text = "Registrar peso";
             // 
             // ordenDeTrabajoToolStripMenuItem
             // 
             this.ordenDeTrabajoToolStripMenuItem.Name = "ordenDeTrabajoToolStripMenuItem";
-            this.ordenDeTrabajoToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.ordenDeTrabajoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ordenDeTrabajoToolStripMenuItem.Text = "Orden de trabajo";
+            this.ordenDeTrabajoToolStripMenuItem.Click += new System.EventHandler(this.ordenDeTrabajoToolStripMenuItem_Click);
             // 
             // salidasToolStripMenuItem
             // 
             this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
-            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salidasToolStripMenuItem.Text = "Salidas";
             // 
             // cONFIGURACIONToolStripMenuItem
@@ -183,19 +187,32 @@
             this.salirMenuItem.Text = "SALIR";
             this.salirMenuItem.Click += new System.EventHandler(this.salirMenuItem_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BasculaInventario.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(85, 102);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(325, 111);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 311);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.mainMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.mainMenu;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "frmMain";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,6 +237,7 @@
         private System.Windows.Forms.ToolStripMenuItem usuariosMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turnosMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

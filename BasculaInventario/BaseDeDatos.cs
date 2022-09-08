@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BasculaInventario
@@ -550,10 +547,10 @@ namespace BasculaInventario
         }
         // Metodo para agregar productos
         public void AgregarProducto(
-            string descProducto,int idAditivo,int idColor,string medida,
-            string calibre,int KGxRollo,int metros,string soplo,string bajaDencidad,
-            string linealButen,string antiblock,bool tub,bool ax1l,bool ax2l,
-            bool pp,bool ppRefil)
+            string descProducto, int idAditivo, int idColor, string medida,
+            string calibre, int KGxRollo, int metros, string soplo, string bajaDencidad,
+            string linealButen, string antiblock, int tub, int ax1l, int ax2l,
+            int pp, int ppRefil)
         {
             try
             {
@@ -566,6 +563,112 @@ namespace BasculaInventario
                 cmd = new SqlCommand(query, conexion);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("El producto se agrego exitosamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para editar productos
+        public void EditarProducto(
+            int idProducto, string descProducto, int idAditivo, int idColor, string medida,
+            string calibre, int KGxRollo, int metros, string soplo, string bajaDencidad,
+            string linealButen, string antiblock, int tub, int ax1l, int ax2l,
+            int pp, int ppRefil)
+        {
+            try
+            {
+                string query = $"UPDATE productos SET descProducto='{descProducto}',idAditivo={idAditivo}," +
+                    $"idColor={idColor},medida='{medida}',calibre='{calibre}',KGxRollo={KGxRollo}," +
+                    $"metros={metros},soplo='{soplo}',bajaDencidad='{bajaDencidad}',linealButen='{linealButen}'," +
+                    $"antiblock='{antiblock}',tub={tub},ax1l={ax1l},ax2l={ax2l},pp={pp},ppRefil={ppRefil} " +
+                    $"WHERE idProducto = {idProducto}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("El producto se editó exitosamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para elimiar productos
+        public void EliminarProducto(int id)
+        {
+            try
+            {
+                string query = $"DELETE FROM productos WHERE idProducto = {id}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("El producto se elimino satisfactoriamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+
+        //METODOS PARA LA TABLA DE ORDENES DE TRABAJO
+        // Metodo para la consulta de Ordenes de Trabajo
+        public DataTable ConsultarOdT()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = $"SELECT * FROM ordenesDeTrabajo";
+                adapter = new SqlDataAdapter(query, conexion);
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+                return dt;
+            }
+        }
+        // Metodo para agregar orden de trabajo
+        public void AgregarOdT(
+            string folioOdT, string ordenDeTrabajo, 
+            int idMaquina, int kilosOdT, string fechaOdT)
+        {
+            try
+            {
+                string query = $"INSERT INTO ordenesDeTrabajo (folioOdT,ordenDeTrabajo,idMaquina,kilosOdT,fechaOdT) " +
+                    $"VALUES ('{folioOdT}','{ordenDeTrabajo}',{idMaquina},{kilosOdT},'{fechaOdT}')";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para editar orden de trabajo
+        public void EditarOdT(int idOdT,
+            string folioOdT, string ordenDeTrabajo,
+            int idMaquina, int kilosOdT, string fechaOdT)
+        {
+            try
+            {
+                string query = $"UPDATE ordenesDeTrabajo SET folioOdT='{folioOdT}',ordenDeTrabajo='{ordenDeTrabajo}'," +
+                    $"idMaquina={idMaquina},kilosOdT={kilosOdT},fechaOdT='{fechaOdT}' " +
+                    $"WHERE idOdT = {idOdT}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+        // Metodo para eliminar una orden de trabajo
+        public void EliminarOdT(int idOdT)
+        {
+            try
+            {
+                string query = $"DELETE FROM ordenesDeTrabajo WHERE idOdT = {idOdT}";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {

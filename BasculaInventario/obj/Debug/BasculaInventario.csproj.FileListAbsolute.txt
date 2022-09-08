@@ -18,3 +18,4 @@ C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\Bascula
 C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.Choferes.resources
 C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.Vehiculos.resources
 C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.Productos.resources
+C:\Users\Dell\source\repos\BasculaInventario\BasculaInventario\obj\Debug\BasculaInventario.OrdenesDeTrabajo.resources

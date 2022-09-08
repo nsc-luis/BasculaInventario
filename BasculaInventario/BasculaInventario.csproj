@@ -76,6 +76,12 @@
     <Compile Include="Maquinas.Designer.cs">
       <DependentUpon>Maquinas.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrdenesDeTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdenesDeTrabajo.Designer.cs">
+      <DependentUpon>OrdenesDeTrabajo.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParamSQL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maquinas.resx">
       <DependentUpon>Maquinas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdenesDeTrabajo.resx">
+      <DependentUpon>OrdenesDeTrabajo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParamSQL.resx">
       <DependentUpon>ParamSQL.cs</DependentUpon>
