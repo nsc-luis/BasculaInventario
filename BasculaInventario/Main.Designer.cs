@@ -46,6 +46,7 @@
             this.conexionABDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.seialCOMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -95,7 +96,7 @@
             // productosMenuItem
             // 
             this.productosMenuItem.Name = "productosMenuItem";
-            this.productosMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productosMenuItem.Size = new System.Drawing.Size(128, 22);
             this.productosMenuItem.Text = "Productos";
             this.productosMenuItem.Click += new System.EventHandler(this.productosMenuItem_Click);
             // 
@@ -135,6 +136,7 @@
             this.registrarPesoToolStripMenuItem.Name = "registrarPesoToolStripMenuItem";
             this.registrarPesoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarPesoToolStripMenuItem.Text = "Registrar peso";
+            this.registrarPesoToolStripMenuItem.Click += new System.EventHandler(this.registrarPesoToolStripMenuItem_Click);
             // 
             // ordenDeTrabajoToolStripMenuItem
             // 
@@ -154,7 +156,8 @@
             this.cONFIGURACIONToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.turnosMenuItem,
             this.usuariosMenuItem,
-            this.conexionABDToolStripMenuItem});
+            this.conexionABDToolStripMenuItem,
+            this.seialCOMToolStripMenuItem});
             this.cONFIGURACIONToolStripMenuItem.Name = "cONFIGURACIONToolStripMenuItem";
             this.cONFIGURACIONToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
             this.cONFIGURACIONToolStripMenuItem.Text = "CONFIGURACION";
@@ -190,11 +193,17 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BasculaInventario.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(85, 102);
+            this.pictureBox1.Location = new System.Drawing.Point(83, 102);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(325, 111);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // seialCOMToolStripMenuItem
+            // 
+            this.seialCOMToolStripMenuItem.Name = "seialCOMToolStripMenuItem";
+            this.seialCOMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.seialCOMToolStripMenuItem.Text = "Seial/COM";
             // 
             // frmMain
             // 
@@ -238,6 +247,7 @@
         private System.Windows.Forms.ToolStripMenuItem turnosMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem seialCOMToolStripMenuItem;
     }
 }
 

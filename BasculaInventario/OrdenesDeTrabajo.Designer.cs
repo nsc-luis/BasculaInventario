@@ -43,15 +43,19 @@
             this.btnEditarOdT = new System.Windows.Forms.Button();
             this.btnAgregarOdT = new System.Windows.Forms.Button();
             this.lblOrdenesDeTrabajo = new System.Windows.Forms.Label();
+            this.lblProducto = new System.Windows.Forms.Label();
+            this.cmbProductos = new System.Windows.Forms.ComboBox();
+            this.lblProductoKG = new System.Windows.Forms.Label();
+            this.txtKgPorUnidadDeProducto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridOdT)).BeginInit();
             this.SuspendLayout();
             // 
             // gridOdT
             // 
             this.gridOdT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridOdT.Location = new System.Drawing.Point(12, 203);
+            this.gridOdT.Location = new System.Drawing.Point(12, 259);
             this.gridOdT.Name = "gridOdT";
-            this.gridOdT.Size = new System.Drawing.Size(542, 150);
+            this.gridOdT.Size = new System.Drawing.Size(464, 150);
             this.gridOdT.TabIndex = 0;
             this.gridOdT.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridOdT_RowHeaderMouseClick);
             // 
@@ -66,7 +70,7 @@
             // 
             // txtFolio
             // 
-            this.txtFolio.Location = new System.Drawing.Point(94, 50);
+            this.txtFolio.Location = new System.Drawing.Point(107, 50);
             this.txtFolio.Name = "txtFolio";
             this.txtFolio.Size = new System.Drawing.Size(100, 20);
             this.txtFolio.TabIndex = 4;
@@ -82,7 +86,7 @@
             // 
             // txtOrden
             // 
-            this.txtOrden.Location = new System.Drawing.Point(94, 93);
+            this.txtOrden.Location = new System.Drawing.Point(107, 92);
             this.txtOrden.Name = "txtOrden";
             this.txtOrden.Size = new System.Drawing.Size(100, 20);
             this.txtOrden.TabIndex = 6;
@@ -90,7 +94,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 100);
+            this.label3.Location = new System.Drawing.Point(22, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 5;
@@ -99,7 +103,7 @@
             // lblMaquina
             // 
             this.lblMaquina.AutoSize = true;
-            this.lblMaquina.Location = new System.Drawing.Point(254, 57);
+            this.lblMaquina.Location = new System.Drawing.Point(232, 57);
             this.lblMaquina.Name = "lblMaquina";
             this.lblMaquina.Size = new System.Drawing.Size(71, 13);
             this.lblMaquina.TabIndex = 7;
@@ -107,23 +111,23 @@
             // 
             // txtKilos
             // 
-            this.txtKilos.Location = new System.Drawing.Point(326, 90);
+            this.txtKilos.Location = new System.Drawing.Point(107, 138);
             this.txtKilos.Name = "txtKilos";
             this.txtKilos.Size = new System.Drawing.Size(100, 20);
             this.txtKilos.TabIndex = 10;
             // 
             // lblKilos
             // 
-            this.lblKilos.AutoSize = true;
-            this.lblKilos.Location = new System.Drawing.Point(254, 97);
+            this.lblKilos.Location = new System.Drawing.Point(23, 130);
             this.lblKilos.Name = "lblKilos";
-            this.lblKilos.Size = new System.Drawing.Size(32, 13);
+            this.lblKilos.Size = new System.Drawing.Size(78, 28);
             this.lblKilos.TabIndex = 9;
-            this.lblKilos.Text = "Kilos:";
+            this.lblKilos.Text = "Total de KG de la orden:";
+            this.lblKilos.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // dpFecha
             // 
-            this.dpFecha.Location = new System.Drawing.Point(92, 11);
+            this.dpFecha.Location = new System.Drawing.Point(107, 12);
             this.dpFecha.Name = "dpFecha";
             this.dpFecha.Size = new System.Drawing.Size(200, 20);
             this.dpFecha.TabIndex = 13;
@@ -131,14 +135,14 @@
             // cmbMaquinas
             // 
             this.cmbMaquinas.FormattingEnabled = true;
-            this.cmbMaquinas.Location = new System.Drawing.Point(326, 49);
+            this.cmbMaquinas.Location = new System.Drawing.Point(333, 49);
             this.cmbMaquinas.Name = "cmbMaquinas";
             this.cmbMaquinas.Size = new System.Drawing.Size(121, 21);
             this.cmbMaquinas.TabIndex = 14;
             // 
             // btnEliminarOdT
             // 
-            this.btnEliminarOdT.Location = new System.Drawing.Point(213, 139);
+            this.btnEliminarOdT.Location = new System.Drawing.Point(211, 196);
             this.btnEliminarOdT.Name = "btnEliminarOdT";
             this.btnEliminarOdT.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarOdT.TabIndex = 31;
@@ -148,7 +152,7 @@
             // 
             // btnEditarOdT
             // 
-            this.btnEditarOdT.Location = new System.Drawing.Point(119, 139);
+            this.btnEditarOdT.Location = new System.Drawing.Point(117, 196);
             this.btnEditarOdT.Name = "btnEditarOdT";
             this.btnEditarOdT.Size = new System.Drawing.Size(75, 23);
             this.btnEditarOdT.TabIndex = 30;
@@ -158,7 +162,7 @@
             // 
             // btnAgregarOdT
             // 
-            this.btnAgregarOdT.Location = new System.Drawing.Point(27, 140);
+            this.btnAgregarOdT.Location = new System.Drawing.Point(25, 197);
             this.btnAgregarOdT.Name = "btnAgregarOdT";
             this.btnAgregarOdT.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarOdT.TabIndex = 29;
@@ -169,17 +173,54 @@
             // lblOrdenesDeTrabajo
             // 
             this.lblOrdenesDeTrabajo.AutoSize = true;
-            this.lblOrdenesDeTrabajo.Location = new System.Drawing.Point(22, 184);
+            this.lblOrdenesDeTrabajo.Location = new System.Drawing.Point(20, 241);
             this.lblOrdenesDeTrabajo.Name = "lblOrdenesDeTrabajo";
             this.lblOrdenesDeTrabajo.Size = new System.Drawing.Size(100, 13);
             this.lblOrdenesDeTrabajo.TabIndex = 32;
             this.lblOrdenesDeTrabajo.Text = "Ordenes de trabajo:";
             // 
+            // lblProducto
+            // 
+            this.lblProducto.AutoSize = true;
+            this.lblProducto.Location = new System.Drawing.Point(232, 99);
+            this.lblProducto.Name = "lblProducto";
+            this.lblProducto.Size = new System.Drawing.Size(53, 13);
+            this.lblProducto.TabIndex = 33;
+            this.lblProducto.Text = "Producto:";
+            // 
+            // cmbProductos
+            // 
+            this.cmbProductos.FormattingEnabled = true;
+            this.cmbProductos.Location = new System.Drawing.Point(333, 91);
+            this.cmbProductos.Name = "cmbProductos";
+            this.cmbProductos.Size = new System.Drawing.Size(121, 21);
+            this.cmbProductos.TabIndex = 34;
+            // 
+            // lblProductoKG
+            // 
+            this.lblProductoKG.Location = new System.Drawing.Point(232, 126);
+            this.lblProductoKG.Name = "lblProductoKG";
+            this.lblProductoKG.Size = new System.Drawing.Size(87, 32);
+            this.lblProductoKG.TabIndex = 35;
+            this.lblProductoKG.Text = "KG por unidad de producto:";
+            this.lblProductoKG.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // txtKgPorUnidadDeProducto
+            // 
+            this.txtKgPorUnidadDeProducto.Location = new System.Drawing.Point(333, 138);
+            this.txtKgPorUnidadDeProducto.Name = "txtKgPorUnidadDeProducto";
+            this.txtKgPorUnidadDeProducto.Size = new System.Drawing.Size(121, 20);
+            this.txtKgPorUnidadDeProducto.TabIndex = 36;
+            // 
             // OrdenesDeTrabajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 364);
+            this.ClientSize = new System.Drawing.Size(493, 424);
+            this.Controls.Add(this.txtKgPorUnidadDeProducto);
+            this.Controls.Add(this.lblProductoKG);
+            this.Controls.Add(this.cmbProductos);
+            this.Controls.Add(this.lblProducto);
             this.Controls.Add(this.lblOrdenesDeTrabajo);
             this.Controls.Add(this.btnEliminarOdT);
             this.Controls.Add(this.btnEditarOdT);
@@ -220,5 +261,9 @@
         private System.Windows.Forms.Button btnEditarOdT;
         private System.Windows.Forms.Button btnAgregarOdT;
         private System.Windows.Forms.Label lblOrdenesDeTrabajo;
+        private System.Windows.Forms.Label lblProducto;
+        private System.Windows.Forms.ComboBox cmbProductos;
+        private System.Windows.Forms.Label lblProductoKG;
+        private System.Windows.Forms.TextBox txtKgPorUnidadDeProducto;
     }
 }

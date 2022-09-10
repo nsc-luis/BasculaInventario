@@ -100,5 +100,11 @@ namespace BasculaInventario
             Productos productos = new Productos();
             productos.Show();
         }
+
+        private void registrarPesoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrarPeso registrarPeso = new RegistrarPeso();
+            registrarPeso.Show();
+        }
     }
 }

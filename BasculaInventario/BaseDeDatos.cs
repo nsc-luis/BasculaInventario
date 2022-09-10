@@ -628,13 +628,14 @@ namespace BasculaInventario
         }
         // Metodo para agregar orden de trabajo
         public void AgregarOdT(
-            string folioOdT, string ordenDeTrabajo, 
-            int idMaquina, int kilosOdT, string fechaOdT)
+            string folioOdT, string ordenDeTrabajo,
+            int idMaquina, int kilosOdT, string fechaOdT,
+            int kgPorUnidadDeProducto, int idProducto)
         {
             try
             {
-                string query = $"INSERT INTO ordenesDeTrabajo (folioOdT,ordenDeTrabajo,idMaquina,kilosOdT,fechaOdT) " +
-                    $"VALUES ('{folioOdT}','{ordenDeTrabajo}',{idMaquina},{kilosOdT},'{fechaOdT}')";
+                string query = $"INSERT INTO ordenesDeTrabajo (folioOdT,ordenDeTrabajo,idMaquina,kilosOdT,fechaOdT,kgPorUnidadDeProducto,idProducto) " +
+                    $"VALUES ('{folioOdT}','{ordenDeTrabajo}',{idMaquina},{kilosOdT},'{fechaOdT}',kgPorUnidadDeProducto={kgPorUnidadDeProducto},{idProducto})";
                 cmd = new SqlCommand(query, conexion);
                 cmd.ExecuteNonQuery();
             }
@@ -646,12 +647,14 @@ namespace BasculaInventario
         // Metodo para editar orden de trabajo
         public void EditarOdT(int idOdT,
             string folioOdT, string ordenDeTrabajo,
-            int idMaquina, int kilosOdT, string fechaOdT)
+            int idMaquina, int kilosOdT, string fechaOdT,
+            int kgPorUnidadDeProducto, int idProducto)
         {
             try
             {
                 string query = $"UPDATE ordenesDeTrabajo SET folioOdT='{folioOdT}',ordenDeTrabajo='{ordenDeTrabajo}'," +
-                    $"idMaquina={idMaquina},kilosOdT={kilosOdT},fechaOdT='{fechaOdT}' " +
+                    $"idMaquina={idMaquina},kilosOdT={kilosOdT},fechaOdT='{fechaOdT}',kgPorUnidadDeProducto={kgPorUnidadDeProducto}," +
+                    $"idProducto={idProducto} " +
                     $"WHERE idOdT = {idOdT}";
                 cmd = new SqlCommand(query, conexion);
                 cmd.ExecuteNonQuery();
@@ -673,6 +676,97 @@ namespace BasculaInventario
             catch (Exception ex)
             {
                 MessageBox.Show("Error: \n" + ex.Message);
+            }
+        }
+
+        //METODOS PARA PANTALLA DE REGISTRO DE PESO
+        //Consultar informacion de la orden de trabajo.
+        public DataTable frmRdP_lstOdT()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = "SELECT * FROM ordenesDeTrabajo";
+                adapter = new SqlDataAdapter(query, conexion);
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+                return dt = null;
+            }
+        }
+        // Consulta productos por orden de trabajo
+        public DataTable lstProductosPorOdT(int idOdT)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = "SELECT p.idProducto, p.descProducto FROM ordenesDeTrabajo odt " +
+                    "JOIN productos p ON odt.idProducto = p.idProducto " +
+                    $"WHERE odt.idOdT = {idOdT}";
+                adapter = new SqlDataAdapter(query, conexion);
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+                return dt = null;
+            }
+        }
+        // Consulta info de la orden de trabajo seleccionada
+        public DataTable infoOdt(int idOdT)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = $"SELECT * FROM ordenesDeTrabajo WHERE idOdt = {idOdT}";
+                adapter = new SqlDataAdapter(query, conexion);
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+                return dt = null;
+            }
+        }
+        // Consulta registros de peso segun orden de compra y producto
+        public DataTable RegistrosDePeso(int idOdT, int idProducto)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = $"SELECT idRdP, peso, fechaRegistro FROM registroDePeso " +
+                    $"WHERE idOdT = {idOdT} AND idProducto = {idProducto}";
+                adapter = new SqlDataAdapter(query, conexion);
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+                return dt = null;
+            }
+        }
+        // Consulta acumulado de peso segun orden de compra y producto
+        public DataTable AcumuladoDePeso(int idOdT, int idProducto)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = $"SELECT SUM(peso) as acumulado FROM registroDePeso " +
+                    $"WHERE idOdT = {idOdT} AND idProducto = {idProducto}";
+                adapter = new SqlDataAdapter(query, conexion);
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
+                return dt = null;
             }
         }
     }
