@@ -45,8 +45,6 @@
             this.lblOrdenesDeTrabajo = new System.Windows.Forms.Label();
             this.lblProducto = new System.Windows.Forms.Label();
             this.cmbProductos = new System.Windows.Forms.ComboBox();
-            this.lblProductoKG = new System.Windows.Forms.Label();
-            this.txtKgPorUnidadDeProducto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridOdT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,29 +194,11 @@
             this.cmbProductos.Size = new System.Drawing.Size(121, 21);
             this.cmbProductos.TabIndex = 34;
             // 
-            // lblProductoKG
-            // 
-            this.lblProductoKG.Location = new System.Drawing.Point(232, 126);
-            this.lblProductoKG.Name = "lblProductoKG";
-            this.lblProductoKG.Size = new System.Drawing.Size(87, 32);
-            this.lblProductoKG.TabIndex = 35;
-            this.lblProductoKG.Text = "KG por unidad de producto:";
-            this.lblProductoKG.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // txtKgPorUnidadDeProducto
-            // 
-            this.txtKgPorUnidadDeProducto.Location = new System.Drawing.Point(333, 138);
-            this.txtKgPorUnidadDeProducto.Name = "txtKgPorUnidadDeProducto";
-            this.txtKgPorUnidadDeProducto.Size = new System.Drawing.Size(121, 20);
-            this.txtKgPorUnidadDeProducto.TabIndex = 36;
-            // 
             // OrdenesDeTrabajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 424);
-            this.Controls.Add(this.txtKgPorUnidadDeProducto);
-            this.Controls.Add(this.lblProductoKG);
             this.Controls.Add(this.cmbProductos);
             this.Controls.Add(this.lblProducto);
             this.Controls.Add(this.lblOrdenesDeTrabajo);
@@ -263,7 +243,5 @@
         private System.Windows.Forms.Label lblOrdenesDeTrabajo;
         private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.ComboBox cmbProductos;
-        private System.Windows.Forms.Label lblProductoKG;
-        private System.Windows.Forms.TextBox txtKgPorUnidadDeProducto;
     }
 }

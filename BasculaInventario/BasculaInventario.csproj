@@ -11,6 +11,8 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,8 +34,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,23 +57,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aditivos.cs">
-      <SubType>Form</SubType>
+      <DependentUpon>EF.tt</DependentUpon>
     </Compile>
     <Compile Include="Aditivos.Designer.cs">
       <DependentUpon>Aditivos.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseDeDatos.cs" />
     <Compile Include="Choferes.cs">
-      <SubType>Form</SubType>
+      <DependentUpon>EF.tt</DependentUpon>
     </Compile>
     <Compile Include="Choferes.Designer.cs">
       <DependentUpon>Choferes.cs</DependentUpon>
     </Compile>
     <Compile Include="Colores.cs">
-      <SubType>Form</SubType>
+      <DependentUpon>EF.tt</DependentUpon>
     </Compile>
     <Compile Include="Colores.Designer.cs">
       <DependentUpon>Colores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EF.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EF.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EF.edmx</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -71,13 +97,13 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Maquinas.cs">
-      <SubType>Form</SubType>
+      <DependentUpon>EF.tt</DependentUpon>
     </Compile>
     <Compile Include="Maquinas.Designer.cs">
       <DependentUpon>Maquinas.cs</DependentUpon>
     </Compile>
     <Compile Include="OrdenesDeTrabajo.cs">
-      <SubType>Form</SubType>
+      <DependentUpon>EF.tt</DependentUpon>
     </Compile>
     <Compile Include="OrdenesDeTrabajo.Designer.cs">
       <DependentUpon>OrdenesDeTrabajo.cs</DependentUpon>
@@ -95,7 +121,7 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos.cs">
-      <SubType>Form</SubType>
+      <DependentUpon>EF.tt</DependentUpon>
     </Compile>
     <Compile Include="Productos.Designer.cs">
       <DependentUpon>Productos.cs</DependentUpon>
@@ -108,20 +134,26 @@
     <Compile Include="RegistrarPeso.Designer.cs">
       <DependentUpon>RegistrarPeso.cs</DependentUpon>
     </Compile>
+    <Compile Include="registroDePeso.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tipoUsuario.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Turnos.cs">
-      <SubType>Form</SubType>
+      <DependentUpon>EF.tt</DependentUpon>
     </Compile>
     <Compile Include="Turnos.Designer.cs">
       <DependentUpon>Turnos.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios.cs">
-      <SubType>Form</SubType>
+      <DependentUpon>EF.tt</DependentUpon>
     </Compile>
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Vehiculos.cs">
-      <SubType>Form</SubType>
+      <DependentUpon>EF.tt</DependentUpon>
     </Compile>
     <Compile Include="Vehiculos.Designer.cs">
       <DependentUpon>Vehiculos.cs</DependentUpon>
@@ -175,6 +207,14 @@
     <EmbeddedResource Include="Vehiculos.resx">
       <DependentUpon>Vehiculos.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="EF.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EF.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF.edmx.diagram">
+      <DependentUpon>EF.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -190,6 +230,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\logo.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EF.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EF.Context.cs</LastGenOutput>
+      <DependentUpon>EF.edmx</DependentUpon>
+    </Content>
+    <Content Include="EF.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EF.edmx</DependentUpon>
+      <LastGenOutput>EF.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

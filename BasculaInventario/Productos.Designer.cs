@@ -39,8 +39,6 @@
             this.lblDescProducto = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCalibre = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtKGxRollo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBajaDencidad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,6 +65,8 @@
             this.cmbAX2L = new System.Windows.Forms.ComboBox();
             this.cmbTUB = new System.Windows.Forms.ComboBox();
             this.cmbColores = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtKGxRollo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,7 +109,7 @@
             this.btnEliminarProducto.Location = new System.Drawing.Point(203, 223);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminarProducto.TabIndex = 17;
+            this.btnEliminarProducto.TabIndex = 69;
             this.btnEliminarProducto.Text = "Eliminar";
             this.btnEliminarProducto.UseVisualStyleBackColor = true;
             this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
@@ -119,7 +119,7 @@
             this.btnEditarProducto.Location = new System.Drawing.Point(110, 223);
             this.btnEditarProducto.Name = "btnEditarProducto";
             this.btnEditarProducto.Size = new System.Drawing.Size(75, 23);
-            this.btnEditarProducto.TabIndex = 16;
+            this.btnEditarProducto.TabIndex = 68;
             this.btnEditarProducto.Text = "Editar";
             this.btnEditarProducto.UseVisualStyleBackColor = true;
             this.btnEditarProducto.Click += new System.EventHandler(this.btnEditarProducto_Click);
@@ -129,7 +129,7 @@
             this.btnAgregarProducto.Location = new System.Drawing.Point(17, 223);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarProducto.TabIndex = 15;
+            this.btnAgregarProducto.TabIndex = 67;
             this.btnAgregarProducto.Text = "Agregar";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
@@ -140,7 +140,7 @@
             this.txtDescProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescProducto.Name = "txtDescProducto";
             this.txtDescProducto.Size = new System.Drawing.Size(416, 20);
-            this.txtDescProducto.TabIndex = 20;
+            this.txtDescProducto.TabIndex = 50;
             // 
             // lblDescProducto
             // 
@@ -168,25 +168,7 @@
             this.txtCalibre.Margin = new System.Windows.Forms.Padding(2);
             this.txtCalibre.Name = "txtCalibre";
             this.txtCalibre.Size = new System.Drawing.Size(137, 20);
-            this.txtCalibre.TabIndex = 22;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(298, 81);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "KGxRollo";
-            // 
-            // txtKGxRollo
-            // 
-            this.txtKGxRollo.Location = new System.Drawing.Point(298, 58);
-            this.txtKGxRollo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtKGxRollo.Name = "txtKGxRollo";
-            this.txtKGxRollo.Size = new System.Drawing.Size(137, 20);
-            this.txtKGxRollo.TabIndex = 24;
+            this.txtCalibre.TabIndex = 52;
             // 
             // label4
             // 
@@ -204,7 +186,7 @@
             this.txtBajaDencidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtBajaDencidad.Name = "txtBajaDencidad";
             this.txtBajaDencidad.Size = new System.Drawing.Size(137, 20);
-            this.txtBajaDencidad.TabIndex = 26;
+            this.txtBajaDencidad.TabIndex = 56;
             // 
             // label5
             // 
@@ -222,7 +204,7 @@
             this.txtLinealButen.Margin = new System.Windows.Forms.Padding(2);
             this.txtLinealButen.Name = "txtLinealButen";
             this.txtLinealButen.Size = new System.Drawing.Size(137, 20);
-            this.txtLinealButen.TabIndex = 28;
+            this.txtLinealButen.TabIndex = 57;
             // 
             // label6
             // 
@@ -300,7 +282,8 @@
             this.txtMetros.Margin = new System.Windows.Forms.Padding(2);
             this.txtMetros.Name = "txtMetros";
             this.txtMetros.Size = new System.Drawing.Size(137, 20);
-            this.txtMetros.TabIndex = 38;
+            this.txtMetros.TabIndex = 54;
+            this.txtMetros.TextChanged += new System.EventHandler(this.txtMetros_TextChanged);
             // 
             // label13
             // 
@@ -318,7 +301,7 @@
             this.txtAntiblock.Margin = new System.Windows.Forms.Padding(2);
             this.txtAntiblock.Name = "txtAntiblock";
             this.txtAntiblock.Size = new System.Drawing.Size(137, 20);
-            this.txtAntiblock.TabIndex = 48;
+            this.txtAntiblock.TabIndex = 58;
             // 
             // label14
             // 
@@ -346,7 +329,7 @@
             this.txtSoplo.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoplo.Name = "txtSoplo";
             this.txtSoplo.Size = new System.Drawing.Size(137, 20);
-            this.txtSoplo.TabIndex = 44;
+            this.txtSoplo.TabIndex = 55;
             // 
             // lblMedida
             // 
@@ -364,11 +347,12 @@
             this.txtMedida.Margin = new System.Windows.Forms.Padding(2);
             this.txtMedida.Name = "txtMedida";
             this.txtMedida.Size = new System.Drawing.Size(137, 20);
-            this.txtMedida.TabIndex = 50;
+            this.txtMedida.TabIndex = 51;
             // 
             // cmbPP
             // 
             this.cmbPP.FormattingEnabled = true;
+            this.cmbPP.ItemHeight = 13;
             this.cmbPP.Items.AddRange(new object[] {
             "SI",
             "NO"});
@@ -376,11 +360,12 @@
             this.cmbPP.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPP.Name = "cmbPP";
             this.cmbPP.Size = new System.Drawing.Size(92, 21);
-            this.cmbPP.TabIndex = 52;
+            this.cmbPP.TabIndex = 62;
             // 
             // cmbPPRefil
             // 
             this.cmbPPRefil.FormattingEnabled = true;
+            this.cmbPPRefil.ItemHeight = 13;
             this.cmbPPRefil.Items.AddRange(new object[] {
             "SI",
             "NO"});
@@ -388,16 +373,17 @@
             this.cmbPPRefil.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPPRefil.Name = "cmbPPRefil";
             this.cmbPPRefil.Size = new System.Drawing.Size(92, 21);
-            this.cmbPPRefil.TabIndex = 53;
+            this.cmbPPRefil.TabIndex = 63;
             // 
             // cmbAditivos
             // 
             this.cmbAditivos.FormattingEnabled = true;
+            this.cmbAditivos.ItemHeight = 13;
             this.cmbAditivos.Location = new System.Drawing.Point(441, 109);
             this.cmbAditivos.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAditivos.Name = "cmbAditivos";
             this.cmbAditivos.Size = new System.Drawing.Size(132, 21);
-            this.cmbAditivos.TabIndex = 54;
+            this.cmbAditivos.TabIndex = 59;
             // 
             // cmbAX1L
             // 
@@ -409,7 +395,7 @@
             this.cmbAX1L.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAX1L.Name = "cmbAX1L";
             this.cmbAX1L.Size = new System.Drawing.Size(92, 21);
-            this.cmbAX1L.TabIndex = 55;
+            this.cmbAX1L.TabIndex = 65;
             // 
             // cmbAX2L
             // 
@@ -421,7 +407,7 @@
             this.cmbAX2L.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAX2L.Name = "cmbAX2L";
             this.cmbAX2L.Size = new System.Drawing.Size(92, 21);
-            this.cmbAX2L.TabIndex = 56;
+            this.cmbAX2L.TabIndex = 66;
             // 
             // cmbTUB
             // 
@@ -433,16 +419,35 @@
             this.cmbTUB.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTUB.Name = "cmbTUB";
             this.cmbTUB.Size = new System.Drawing.Size(92, 21);
-            this.cmbTUB.TabIndex = 57;
+            this.cmbTUB.TabIndex = 64;
             // 
             // cmbColores
             // 
             this.cmbColores.FormattingEnabled = true;
+            this.cmbColores.ItemHeight = 13;
             this.cmbColores.Location = new System.Drawing.Point(579, 109);
             this.cmbColores.Margin = new System.Windows.Forms.Padding(2);
             this.cmbColores.Name = "cmbColores";
             this.cmbColores.Size = new System.Drawing.Size(134, 21);
-            this.cmbColores.TabIndex = 58;
+            this.cmbColores.TabIndex = 60;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(298, 81);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "KGxRollo";
+            // 
+            // txtKGxRollo
+            // 
+            this.txtKGxRollo.Location = new System.Drawing.Point(298, 58);
+            this.txtKGxRollo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtKGxRollo.Name = "txtKGxRollo";
+            this.txtKGxRollo.Size = new System.Drawing.Size(137, 20);
+            this.txtKGxRollo.TabIndex = 53;
             // 
             // Productos
             // 
@@ -506,8 +511,6 @@
         private System.Windows.Forms.Label lblDescProducto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCalibre;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtKGxRollo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtBajaDencidad;
         private System.Windows.Forms.Label label5;
@@ -534,5 +537,7 @@
         private System.Windows.Forms.ComboBox cmbAX2L;
         private System.Windows.Forms.ComboBox cmbTUB;
         private System.Windows.Forms.ComboBox cmbColores;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtKGxRollo;
     }
 }

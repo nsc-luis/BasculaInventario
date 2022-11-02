@@ -630,12 +630,12 @@ namespace BasculaInventario
         public void AgregarOdT(
             string folioOdT, string ordenDeTrabajo,
             int idMaquina, int kilosOdT, string fechaOdT,
-            int kgPorUnidadDeProducto, int idProducto)
+            int idProducto)
         {
             try
             {
-                string query = $"INSERT INTO ordenesDeTrabajo (folioOdT,ordenDeTrabajo,idMaquina,kilosOdT,fechaOdT,kgPorUnidadDeProducto,idProducto) " +
-                    $"VALUES ('{folioOdT}','{ordenDeTrabajo}',{idMaquina},{kilosOdT},'{fechaOdT}',kgPorUnidadDeProducto={kgPorUnidadDeProducto},{idProducto})";
+                string query = $"INSERT INTO ordenesDeTrabajo (folioOdT,ordenDeTrabajo,idMaquina,kilosOdT,fechaOdT,idProducto) " +
+                    $"VALUES ('{folioOdT}','{ordenDeTrabajo}',{idMaquina},{kilosOdT},'{fechaOdT}',{idProducto})";
                 cmd = new SqlCommand(query, conexion);
                 cmd.ExecuteNonQuery();
             }
@@ -648,12 +648,12 @@ namespace BasculaInventario
         public void EditarOdT(int idOdT,
             string folioOdT, string ordenDeTrabajo,
             int idMaquina, int kilosOdT, string fechaOdT,
-            int kgPorUnidadDeProducto, int idProducto)
+            int idProducto)
         {
             try
             {
                 string query = $"UPDATE ordenesDeTrabajo SET folioOdT='{folioOdT}',ordenDeTrabajo='{ordenDeTrabajo}'," +
-                    $"idMaquina={idMaquina},kilosOdT={kilosOdT},fechaOdT='{fechaOdT}',kgPorUnidadDeProducto={kgPorUnidadDeProducto}," +
+                    $"idMaquina={idMaquina},kilosOdT={kilosOdT},fechaOdT='{fechaOdT}'," +
                     $"idProducto={idProducto} " +
                     $"WHERE idOdT = {idOdT}";
                 cmd = new SqlCommand(query, conexion);
@@ -739,8 +739,9 @@ namespace BasculaInventario
             DataTable dt = new DataTable();
             try
             {
-                string query = $"SELECT idRdP, peso, fechaRegistro FROM registroDePeso " +
-                    $"WHERE idOdT = {idOdT} AND idProducto = {idProducto}";
+                string query = $"SELECT rdp.idRdP, rdp.peso, rdp.fechaRegistro, p.KGxRollo FROM registroDePeso rdp " +
+                    $"JOIN productos p ON rdp.idProducto = p.idProducto " +
+                    $"WHERE rdp.idOdT = {idOdT} AND rdp.idProducto = {idProducto}";
                 adapter = new SqlDataAdapter(query, conexion);
                 adapter.Fill(dt);
                 return dt;
@@ -757,8 +758,13 @@ namespace BasculaInventario
             DataTable dt = new DataTable();
             try
             {
-                string query = $"SELECT SUM(peso) as acumulado FROM registroDePeso " +
-                    $"WHERE idOdT = {idOdT} AND idProducto = {idProducto}";
+                string query = 
+                    "SELECT rdp.idRdP, rdp.peso, rdp.fechaRegistro, p.KGxRollo, " +
+                    "(SELECT SUM(peso) FROM registroDePeso rdp JOIN productos p ON rdp.idProducto = p.idProducto WHERE p.idProducto = 1) AS surtido, " +
+                    $"(SELECT kilosOdT FROM ordenesDeTrabajo odt WHERE idOdT = {idOdT}) AS kgPorOdT " +
+                    "FROM registroDePeso rdp " +
+                    "JOIN productos p ON rdp.idProducto = p.idProducto " +
+                    $"WHERE p.idProducto = {idProducto} AND rdp.idOdT = {idOdT}";
                 adapter = new SqlDataAdapter(query, conexion);
                 adapter.Fill(dt);
                 return dt;
@@ -767,6 +773,22 @@ namespace BasculaInventario
             {
                 MessageBox.Show("Error: \n" + ex.Message);
                 return dt = null;
+            }
+        }
+        // Metodo para agregar orden de trabajo
+        public void AgregarRegistroPeso(int idOdT, int idProducto, double peso)
+        {
+            DateTime fechayhora = DateTime.Now;
+            try
+            {
+                string query = $"INSERT INTO registroDePeso (idOdT,idProducto,peso,fechaRegistro) " +
+                    $"VALUES ({idOdT},{idProducto},{peso},'{fechayhora}')";
+                cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: \n" + ex.Message);
             }
         }
     }

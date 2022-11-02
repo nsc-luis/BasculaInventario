@@ -98,13 +98,14 @@ namespace BasculaInventario
 
         private void cmbOdT_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            MessageBox.Show(cmbOdT.SelectedValue.ToString());
             dt = new DataTable();
             if (cmbOdT.SelectedValue.ToString() != "0")
             {
                 idOdT = int.Parse(cmbOdT.SelectedValue.ToString());
                 dt = bd.infoOdt(idOdT);
                 bd.conexion.Close();
-                foreach(DataRow row in dt.Rows)
+                foreach (DataRow row in dt.Rows)
                 {
                     txtFolio.Text = row[1].ToString();
                     txtOrdenDeTrabajo.Text = row[2].ToString();
@@ -113,25 +114,64 @@ namespace BasculaInventario
                 }
                 ComboProductos(idOdT);
             }
+            else
+            {
+                LimpiarFomulario();
+                txtKgSurtidos.Text = null;
+                txtKgPorSurtir.Text = null;
+                gridRegistrosDePeso.DataSource = null;
+            }
         }
 
         private void cmbProducto_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            MessageBox.Show(cmbProducto.SelectedValue.ToString());
             dt = new DataTable();
             if (cmbProducto.SelectedValue.ToString() != "0")
             {
                 idProducto = int.Parse(cmbProducto.SelectedValue.ToString());
                 bd = new BaseDeDatos();
-                dt = bd.RegistrosDePeso(idOdT, idProducto);
-                bd.conexion.Close();
-                gridRegistrosDePeso.DataSource = dt;
-                dt = null;
-
-                bd = new BaseDeDatos();
                 dt = bd.AcumuladoDePeso(idOdT, idProducto);
                 bd.conexion.Close();
-                txtKgPorSurtir.Text = "100";
+                if (dt.Rows.Count > 0)
+                {
+                    txtKgPorSurtir.Text = (Convert.ToDouble(txtKilos.Text) - Convert.ToDouble(dt.Rows[0]["surtido"].ToString())).ToString();
+                    txtKgSurtidos.Text = dt.Rows[0]["surtido"].ToString();
+                    bd = new BaseDeDatos();
+                    dt = bd.RegistrosDePeso(idOdT, idProducto);
+                    bd.conexion.Close();
+                    gridRegistrosDePeso.DataSource = dt;
+                    txtKgPorUnidadDeProducto.Text = dt.Rows[0]["KGxRollo"].ToString();
+                }
+                else
+                {
+                    txtKgPorUnidadDeProducto.Text = "0";
+                    cmbProducto.SelectedValue = 0;
+                    LimpiarFomulario();
+                    gridRegistrosDePeso.DataSource = null;
+                }
             }
+        }
+
+        private void btnGuardarRegistro_Click(object sender, EventArgs e)
+        {
+            bd = new BaseDeDatos();
+            bd.AgregarRegistroPeso(
+                int.Parse(cmbOdT.SelectedValue.ToString()), 
+                int.Parse(cmbProducto.SelectedValue.ToString()), 
+                double.Parse(txtPeso.ToString())
+                );
+        }
+
+        private void LimpiarFomulario()
+        {
+            txtFolio.Text = "";
+            txtKgPorSurtir.Text = "";
+            txtKgPorUnidadDeProducto.Text = "";
+            txtKgSurtidos.Text = "";
+            txtKilos.Text = "";
+            txtOrdenDeTrabajo.Text = "";
+            txtPeso.Text = "";
         }
     }
 }
