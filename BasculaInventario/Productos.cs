@@ -14,6 +14,13 @@ namespace BasculaInventario
     
     public partial class productos
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public productos()
+        {
+            this.ordenesDeTrabajo = new HashSet<ordenesDeTrabajo>();
+            this.registroDePeso = new HashSet<registroDePeso>();
+        }
+    
         public int idProducto { get; set; }
         public string descProducto { get; set; }
         public int idAditivo { get; set; }
@@ -31,5 +38,12 @@ namespace BasculaInventario
         public bool ax2l { get; set; }
         public bool pp { get; set; }
         public bool ppRefil { get; set; }
+    
+        public virtual aditivos aditivos { get; set; }
+        public virtual colores colores { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ordenesDeTrabajo> ordenesDeTrabajo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<registroDePeso> registroDePeso { get; set; }
     }
 }

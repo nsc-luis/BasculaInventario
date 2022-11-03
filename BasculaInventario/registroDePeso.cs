@@ -19,5 +19,8 @@ namespace BasculaInventario
         public int idProducto { get; set; }
         public double peso { get; set; }
         public System.DateTime fechaRegistro { get; set; }
+    
+        public virtual ordenesDeTrabajo ordenesDeTrabajo { get; set; }
+        public virtual productos productos { get; set; }
     }
 }

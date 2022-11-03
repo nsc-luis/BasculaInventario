@@ -14,6 +14,12 @@ namespace BasculaInventario
     
     public partial class ordenesDeTrabajo
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ordenesDeTrabajo()
+        {
+            this.registroDePeso = new HashSet<registroDePeso>();
+        }
+    
         public int idOdT { get; set; }
         public string folioOdT { get; set; }
         public string ordenDeTrabajo { get; set; }
@@ -21,5 +27,10 @@ namespace BasculaInventario
         public int kilosOdT { get; set; }
         public System.DateTime fechaOdT { get; set; }
         public int idProducto { get; set; }
+    
+        public virtual maquinas maquinas { get; set; }
+        public virtual productos productos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<registroDePeso> registroDePeso { get; set; }
     }
 }

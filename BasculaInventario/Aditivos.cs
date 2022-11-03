@@ -14,7 +14,16 @@ namespace BasculaInventario
     
     public partial class aditivos
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public aditivos()
+        {
+            this.productos = new HashSet<productos>();
+        }
+    
         public int idAditivo { get; set; }
         public string descAditivo { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<productos> productos { get; set; }
     }
 }

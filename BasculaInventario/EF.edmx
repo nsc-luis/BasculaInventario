@@ -5,58 +5,38 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="BasculaInventarioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'BasculaInventario.dbo.aditivos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="aditivos">
           <Key>
             <PropertyRef Name="idAditivo" />
-            <PropertyRef Name="descAditivo" />
           </Key>
           <Property Name="idAditivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descAditivo" Type="varchar" MaxLength="150" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'BasculaInventario.dbo.choferes' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="choferes">
           <Key>
             <PropertyRef Name="idChofer" />
-            <PropertyRef Name="nombreChofer" />
           </Key>
           <Property Name="idChofer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombreChofer" Type="varchar" MaxLength="150" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'BasculaInventario.dbo.colores' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="colores">
           <Key>
             <PropertyRef Name="idColor" />
-            <PropertyRef Name="color" />
           </Key>
           <Property Name="idColor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="color" Type="varchar" MaxLength="150" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'BasculaInventario.dbo.maquinas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="maquinas">
           <Key>
             <PropertyRef Name="idMaquina" />
-            <PropertyRef Name="numeroMaquina" />
           </Key>
           <Property Name="idMaquina" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="numeroMaquina" Type="int" Nullable="false" />
           <Property Name="descMaquina" Type="varchar" MaxLength="150" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'BasculaInventario.dbo.ordenesDeTrabajo' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="ordenesDeTrabajo">
           <Key>
             <PropertyRef Name="idOdT" />
-            <PropertyRef Name="folioOdT" />
-            <PropertyRef Name="ordenDeTrabajo" />
-            <PropertyRef Name="idMaquina" />
-            <PropertyRef Name="kilosOdT" />
-            <PropertyRef Name="fechaOdT" />
-            <PropertyRef Name="idProducto" />
           </Key>
           <Property Name="idOdT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="folioOdT" Type="varchar" MaxLength="150" Nullable="false" />
@@ -66,19 +46,9 @@ advertencia 6002: La tabla o vista 'BasculaInventario.dbo.ordenesDeTrabajo' no t
           <Property Name="fechaOdT" Type="date" Nullable="false" />
           <Property Name="idProducto" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'BasculaInventario.dbo.productos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="productos">
           <Key>
             <PropertyRef Name="idProducto" />
-            <PropertyRef Name="descProducto" />
-            <PropertyRef Name="idAditivo" />
-            <PropertyRef Name="idColor" />
-            <PropertyRef Name="tub" />
-            <PropertyRef Name="ax1l" />
-            <PropertyRef Name="ax2l" />
-            <PropertyRef Name="pp" />
-            <PropertyRef Name="ppRefil" />
           </Key>
           <Property Name="idProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descProducto" Type="varchar(max)" Nullable="false" />
@@ -98,15 +68,9 @@ advertencia 6002: La tabla o vista 'BasculaInventario.dbo.productos' no tiene de
           <Property Name="pp" Type="bit" Nullable="false" />
           <Property Name="ppRefil" Type="bit" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'BasculaInventario.dbo.registroDePeso' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="registroDePeso">
           <Key>
             <PropertyRef Name="idRdP" />
-            <PropertyRef Name="idOdT" />
-            <PropertyRef Name="idProducto" />
-            <PropertyRef Name="peso" />
-            <PropertyRef Name="fechaRegistro" />
           </Key>
           <Property Name="idRdP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idOdT" Type="int" Nullable="false" />
@@ -114,35 +78,23 @@ advertencia 6002: La tabla o vista 'BasculaInventario.dbo.registroDePeso' no tie
           <Property Name="peso" Type="float" Nullable="false" />
           <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'BasculaInventario.dbo.tipoUsuario' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="tipoUsuario">
           <Key>
             <PropertyRef Name="idTipoUsuario" />
-            <PropertyRef Name="descTipoUsuario" />
           </Key>
           <Property Name="idTipoUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descTipoUsuario" Type="varchar" MaxLength="150" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'BasculaInventario.dbo.turnos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="turnos">
           <Key>
             <PropertyRef Name="idTurno" />
-            <PropertyRef Name="descTurno" />
           </Key>
           <Property Name="idTurno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descTurno" Type="varchar" MaxLength="150" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'BasculaInventario.dbo.usuarios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="usuarios">
           <Key>
             <PropertyRef Name="idUsuario" />
-            <PropertyRef Name="usuario" />
-            <PropertyRef Name="passUsuario" />
-            <PropertyRef Name="nombreUsuario" />
-            <PropertyRef Name="perfil" />
           </Key>
           <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="usuario" Type="varchar" MaxLength="100" Nullable="false" />
@@ -150,112 +102,122 @@ advertencia 6002: La tabla o vista 'BasculaInventario.dbo.usuarios' no tiene def
           <Property Name="nombreUsuario" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="perfil" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'BasculaInventario.dbo.vehiculos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="vehiculos">
           <Key>
             <PropertyRef Name="idVehiculo" />
-            <PropertyRef Name="descVehiculo" />
           </Key>
           <Property Name="idVehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descVehiculo" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="placasVehiculo" Type="varchar" MaxLength="150" />
         </EntityType>
+        <Association Name="FK__ordenesDe__idMaq__2A164134">
+          <End Role="maquinas" Type="Self.maquinas" Multiplicity="1" />
+          <End Role="ordenesDeTrabajo" Type="Self.ordenesDeTrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maquinas">
+              <PropertyRef Name="idMaquina" />
+            </Principal>
+            <Dependent Role="ordenesDeTrabajo">
+              <PropertyRef Name="idMaquina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordenesDe__idPro__2B0A656D">
+          <End Role="productos" Type="Self.productos" Multiplicity="1" />
+          <End Role="ordenesDeTrabajo" Type="Self.ordenesDeTrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productos">
+              <PropertyRef Name="idProducto" />
+            </Principal>
+            <Dependent Role="ordenesDeTrabajo">
+              <PropertyRef Name="idProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__productos__idAdi__367C1819">
+          <End Role="aditivos" Type="Self.aditivos" Multiplicity="1" />
+          <End Role="productos" Type="Self.productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aditivos">
+              <PropertyRef Name="idAditivo" />
+            </Principal>
+            <Dependent Role="productos">
+              <PropertyRef Name="idAditivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__productos__idCol__37703C52">
+          <End Role="colores" Type="Self.colores" Multiplicity="1" />
+          <End Role="productos" Type="Self.productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colores">
+              <PropertyRef Name="idColor" />
+            </Principal>
+            <Dependent Role="productos">
+              <PropertyRef Name="idColor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__registroD__idOdT__3493CFA7">
+          <End Role="ordenesDeTrabajo" Type="Self.ordenesDeTrabajo" Multiplicity="1" />
+          <End Role="registroDePeso" Type="Self.registroDePeso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ordenesDeTrabajo">
+              <PropertyRef Name="idOdT" />
+            </Principal>
+            <Dependent Role="registroDePeso">
+              <PropertyRef Name="idOdT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__registroD__idPro__3587F3E0">
+          <End Role="productos" Type="Self.productos" Multiplicity="1" />
+          <End Role="registroDePeso" Type="Self.registroDePeso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productos">
+              <PropertyRef Name="idProducto" />
+            </Principal>
+            <Dependent Role="registroDePeso">
+              <PropertyRef Name="idProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="BasculaInventarioModelStoreContainer">
-          <EntitySet Name="aditivos" EntityType="Self.aditivos" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [aditivos].[idAditivo] AS [idAditivo], 
-    [aditivos].[descAditivo] AS [descAditivo]
-    FROM [dbo].[aditivos] AS [aditivos]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="choferes" EntityType="Self.choferes" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [choferes].[idChofer] AS [idChofer], 
-    [choferes].[nombreChofer] AS [nombreChofer]
-    FROM [dbo].[choferes] AS [choferes]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="colores" EntityType="Self.colores" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [colores].[idColor] AS [idColor], 
-    [colores].[color] AS [color]
-    FROM [dbo].[colores] AS [colores]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="maquinas" EntityType="Self.maquinas" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [maquinas].[idMaquina] AS [idMaquina], 
-    [maquinas].[numeroMaquina] AS [numeroMaquina], 
-    [maquinas].[descMaquina] AS [descMaquina]
-    FROM [dbo].[maquinas] AS [maquinas]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="ordenesDeTrabajo" EntityType="Self.ordenesDeTrabajo" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ordenesDeTrabajo].[idOdT] AS [idOdT], 
-    [ordenesDeTrabajo].[folioOdT] AS [folioOdT], 
-    [ordenesDeTrabajo].[ordenDeTrabajo] AS [ordenDeTrabajo], 
-    [ordenesDeTrabajo].[idMaquina] AS [idMaquina], 
-    [ordenesDeTrabajo].[kilosOdT] AS [kilosOdT], 
-    [ordenesDeTrabajo].[fechaOdT] AS [fechaOdT], 
-    [ordenesDeTrabajo].[idProducto] AS [idProducto]
-    FROM [dbo].[ordenesDeTrabajo] AS [ordenesDeTrabajo]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="productos" EntityType="Self.productos" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [productos].[idProducto] AS [idProducto], 
-    [productos].[descProducto] AS [descProducto], 
-    [productos].[idAditivo] AS [idAditivo], 
-    [productos].[idColor] AS [idColor], 
-    [productos].[medida] AS [medida], 
-    [productos].[calibre] AS [calibre], 
-    [productos].[KGxRollo] AS [KGxRollo], 
-    [productos].[metros] AS [metros], 
-    [productos].[soplo] AS [soplo], 
-    [productos].[bajaDencidad] AS [bajaDencidad], 
-    [productos].[linealButen] AS [linealButen], 
-    [productos].[antiblock] AS [antiblock], 
-    [productos].[tub] AS [tub], 
-    [productos].[ax1l] AS [ax1l], 
-    [productos].[ax2l] AS [ax2l], 
-    [productos].[pp] AS [pp], 
-    [productos].[ppRefil] AS [ppRefil]
-    FROM [dbo].[productos] AS [productos]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="registroDePeso" EntityType="Self.registroDePeso" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [registroDePeso].[idRdP] AS [idRdP], 
-    [registroDePeso].[idOdT] AS [idOdT], 
-    [registroDePeso].[idProducto] AS [idProducto], 
-    [registroDePeso].[peso] AS [peso], 
-    [registroDePeso].[fechaRegistro] AS [fechaRegistro]
-    FROM [dbo].[registroDePeso] AS [registroDePeso]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="tipoUsuario" EntityType="Self.tipoUsuario" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [tipoUsuario].[idTipoUsuario] AS [idTipoUsuario], 
-    [tipoUsuario].[descTipoUsuario] AS [descTipoUsuario]
-    FROM [dbo].[tipoUsuario] AS [tipoUsuario]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="turnos" EntityType="Self.turnos" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [turnos].[idTurno] AS [idTurno], 
-    [turnos].[descTurno] AS [descTurno]
-    FROM [dbo].[turnos] AS [turnos]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="usuarios" EntityType="Self.usuarios" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [usuarios].[idUsuario] AS [idUsuario], 
-    [usuarios].[usuario] AS [usuario], 
-    [usuarios].[passUsuario] AS [passUsuario], 
-    [usuarios].[nombreUsuario] AS [nombreUsuario], 
-    [usuarios].[perfil] AS [perfil]
-    FROM [dbo].[usuarios] AS [usuarios]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vehiculos" EntityType="Self.vehiculos" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vehiculos].[idVehiculo] AS [idVehiculo], 
-    [vehiculos].[descVehiculo] AS [descVehiculo], 
-    [vehiculos].[placasVehiculo] AS [placasVehiculo]
-    FROM [dbo].[vehiculos] AS [vehiculos]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="aditivos" EntityType="Self.aditivos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="choferes" EntityType="Self.choferes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="colores" EntityType="Self.colores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="maquinas" EntityType="Self.maquinas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ordenesDeTrabajo" EntityType="Self.ordenesDeTrabajo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="productos" EntityType="Self.productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="registroDePeso" EntityType="Self.registroDePeso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoUsuario" EntityType="Self.tipoUsuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="turnos" EntityType="Self.turnos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vehiculos" EntityType="Self.vehiculos" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ordenesDe__idMaq__2A164134" Association="Self.FK__ordenesDe__idMaq__2A164134">
+            <End Role="maquinas" EntitySet="maquinas" />
+            <End Role="ordenesDeTrabajo" EntitySet="ordenesDeTrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordenesDe__idPro__2B0A656D" Association="Self.FK__ordenesDe__idPro__2B0A656D">
+            <End Role="productos" EntitySet="productos" />
+            <End Role="ordenesDeTrabajo" EntitySet="ordenesDeTrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__productos__idAdi__367C1819" Association="Self.FK__productos__idAdi__367C1819">
+            <End Role="aditivos" EntitySet="aditivos" />
+            <End Role="productos" EntitySet="productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__productos__idCol__37703C52" Association="Self.FK__productos__idCol__37703C52">
+            <End Role="colores" EntitySet="colores" />
+            <End Role="productos" EntitySet="productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__registroD__idOdT__3493CFA7" Association="Self.FK__registroD__idOdT__3493CFA7">
+            <End Role="ordenesDeTrabajo" EntitySet="ordenesDeTrabajo" />
+            <End Role="registroDePeso" EntitySet="registroDePeso" />
+          </AssociationSet>
+          <AssociationSet Name="FK__registroD__idPro__3587F3E0" Association="Self.FK__registroD__idPro__3587F3E0">
+            <End Role="productos" EntitySet="productos" />
+            <End Role="registroDePeso" EntitySet="registroDePeso" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -265,15 +227,14 @@ advertencia 6002: La tabla o vista 'BasculaInventario.dbo.vehiculos' no tiene de
         <EntityType Name="aditivos">
           <Key>
             <PropertyRef Name="idAditivo" />
-            <PropertyRef Name="descAditivo" />
           </Key>
           <Property Name="idAditivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descAditivo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="productos" Relationship="Self.FK__productos__idAdi__367C1819" FromRole="aditivos" ToRole="productos" />
         </EntityType>
         <EntityType Name="choferes">
           <Key>
             <PropertyRef Name="idChofer" />
-            <PropertyRef Name="nombreChofer" />
           </Key>
           <Property Name="idChofer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombreChofer" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
@@ -281,29 +242,23 @@ advertencia 6002: La tabla o vista 'BasculaInventario.dbo.vehiculos' no tiene de
         <EntityType Name="colores">
           <Key>
             <PropertyRef Name="idColor" />
-            <PropertyRef Name="color" />
           </Key>
           <Property Name="idColor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="color" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="productos" Relationship="Self.FK__productos__idCol__37703C52" FromRole="colores" ToRole="productos" />
         </EntityType>
         <EntityType Name="maquinas">
           <Key>
             <PropertyRef Name="idMaquina" />
-            <PropertyRef Name="numeroMaquina" />
           </Key>
           <Property Name="idMaquina" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="numeroMaquina" Type="Int32" Nullable="false" />
           <Property Name="descMaquina" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ordenesDeTrabajo" Relationship="Self.FK__ordenesDe__idMaq__2A164134" FromRole="maquinas" ToRole="ordenesDeTrabajo" />
         </EntityType>
         <EntityType Name="ordenesDeTrabajo">
           <Key>
             <PropertyRef Name="idOdT" />
-            <PropertyRef Name="folioOdT" />
-            <PropertyRef Name="ordenDeTrabajo" />
-            <PropertyRef Name="idMaquina" />
-            <PropertyRef Name="kilosOdT" />
-            <PropertyRef Name="fechaOdT" />
-            <PropertyRef Name="idProducto" />
           </Key>
           <Property Name="idOdT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="folioOdT" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
@@ -312,18 +267,13 @@ advertencia 6002: La tabla o vista 'BasculaInventario.dbo.vehiculos' no tiene de
           <Property Name="kilosOdT" Type="Int32" Nullable="false" />
           <Property Name="fechaOdT" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="idProducto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="maquinas" Relationship="Self.FK__ordenesDe__idMaq__2A164134" FromRole="ordenesDeTrabajo" ToRole="maquinas" />
+          <NavigationProperty Name="productos" Relationship="Self.FK__ordenesDe__idPro__2B0A656D" FromRole="ordenesDeTrabajo" ToRole="productos" />
+          <NavigationProperty Name="registroDePeso" Relationship="Self.FK__registroD__idOdT__3493CFA7" FromRole="ordenesDeTrabajo" ToRole="registroDePeso" />
         </EntityType>
         <EntityType Name="productos">
           <Key>
             <PropertyRef Name="idProducto" />
-            <PropertyRef Name="descProducto" />
-            <PropertyRef Name="idAditivo" />
-            <PropertyRef Name="idColor" />
-            <PropertyRef Name="tub" />
-            <PropertyRef Name="ax1l" />
-            <PropertyRef Name="ax2l" />
-            <PropertyRef Name="pp" />
-            <PropertyRef Name="ppRefil" />
           </Key>
           <Property Name="idProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descProducto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
@@ -342,25 +292,26 @@ advertencia 6002: La tabla o vista 'BasculaInventario.dbo.vehiculos' no tiene de
           <Property Name="ax2l" Type="Boolean" Nullable="false" />
           <Property Name="pp" Type="Boolean" Nullable="false" />
           <Property Name="ppRefil" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="aditivos" Relationship="Self.FK__productos__idAdi__367C1819" FromRole="productos" ToRole="aditivos" />
+          <NavigationProperty Name="colores" Relationship="Self.FK__productos__idCol__37703C52" FromRole="productos" ToRole="colores" />
+          <NavigationProperty Name="ordenesDeTrabajo" Relationship="Self.FK__ordenesDe__idPro__2B0A656D" FromRole="productos" ToRole="ordenesDeTrabajo" />
+          <NavigationProperty Name="registroDePeso" Relationship="Self.FK__registroD__idPro__3587F3E0" FromRole="productos" ToRole="registroDePeso" />
         </EntityType>
         <EntityType Name="registroDePeso">
           <Key>
             <PropertyRef Name="idRdP" />
-            <PropertyRef Name="idOdT" />
-            <PropertyRef Name="idProducto" />
-            <PropertyRef Name="peso" />
-            <PropertyRef Name="fechaRegistro" />
           </Key>
           <Property Name="idRdP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idOdT" Type="Int32" Nullable="false" />
           <Property Name="idProducto" Type="Int32" Nullable="false" />
           <Property Name="peso" Type="Double" Nullable="false" />
           <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ordenesDeTrabajo" Relationship="Self.FK__registroD__idOdT__3493CFA7" FromRole="registroDePeso" ToRole="ordenesDeTrabajo" />
+          <NavigationProperty Name="productos" Relationship="Self.FK__registroD__idPro__3587F3E0" FromRole="registroDePeso" ToRole="productos" />
         </EntityType>
         <EntityType Name="tipoUsuario">
           <Key>
             <PropertyRef Name="idTipoUsuario" />
-            <PropertyRef Name="descTipoUsuario" />
           </Key>
           <Property Name="idTipoUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descTipoUsuario" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
@@ -368,7 +319,6 @@ advertencia 6002: La tabla o vista 'BasculaInventario.dbo.vehiculos' no tiene de
         <EntityType Name="turnos">
           <Key>
             <PropertyRef Name="idTurno" />
-            <PropertyRef Name="descTurno" />
           </Key>
           <Property Name="idTurno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descTurno" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
@@ -376,10 +326,6 @@ advertencia 6002: La tabla o vista 'BasculaInventario.dbo.vehiculos' no tiene de
         <EntityType Name="usuarios">
           <Key>
             <PropertyRef Name="idUsuario" />
-            <PropertyRef Name="usuario" />
-            <PropertyRef Name="passUsuario" />
-            <PropertyRef Name="nombreUsuario" />
-            <PropertyRef Name="perfil" />
           </Key>
           <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="usuario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
@@ -390,12 +336,83 @@ advertencia 6002: La tabla o vista 'BasculaInventario.dbo.vehiculos' no tiene de
         <EntityType Name="vehiculos">
           <Key>
             <PropertyRef Name="idVehiculo" />
-            <PropertyRef Name="descVehiculo" />
           </Key>
           <Property Name="idVehiculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descVehiculo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="placasVehiculo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
         </EntityType>
+        <Association Name="FK__productos__idAdi__367C1819">
+          <End Role="aditivos" Type="Self.aditivos" Multiplicity="1" />
+          <End Role="productos" Type="Self.productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aditivos">
+              <PropertyRef Name="idAditivo" />
+            </Principal>
+            <Dependent Role="productos">
+              <PropertyRef Name="idAditivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__productos__idCol__37703C52">
+          <End Role="colores" Type="Self.colores" Multiplicity="1" />
+          <End Role="productos" Type="Self.productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colores">
+              <PropertyRef Name="idColor" />
+            </Principal>
+            <Dependent Role="productos">
+              <PropertyRef Name="idColor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordenesDe__idMaq__2A164134">
+          <End Role="maquinas" Type="Self.maquinas" Multiplicity="1" />
+          <End Role="ordenesDeTrabajo" Type="Self.ordenesDeTrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maquinas">
+              <PropertyRef Name="idMaquina" />
+            </Principal>
+            <Dependent Role="ordenesDeTrabajo">
+              <PropertyRef Name="idMaquina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordenesDe__idPro__2B0A656D">
+          <End Role="productos" Type="Self.productos" Multiplicity="1" />
+          <End Role="ordenesDeTrabajo" Type="Self.ordenesDeTrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productos">
+              <PropertyRef Name="idProducto" />
+            </Principal>
+            <Dependent Role="ordenesDeTrabajo">
+              <PropertyRef Name="idProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__registroD__idOdT__3493CFA7">
+          <End Role="ordenesDeTrabajo" Type="Self.ordenesDeTrabajo" Multiplicity="1" />
+          <End Role="registroDePeso" Type="Self.registroDePeso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ordenesDeTrabajo">
+              <PropertyRef Name="idOdT" />
+            </Principal>
+            <Dependent Role="registroDePeso">
+              <PropertyRef Name="idOdT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__registroD__idPro__3587F3E0">
+          <End Role="productos" Type="Self.productos" Multiplicity="1" />
+          <End Role="registroDePeso" Type="Self.registroDePeso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productos">
+              <PropertyRef Name="idProducto" />
+            </Principal>
+            <Dependent Role="registroDePeso">
+              <PropertyRef Name="idProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="BasculaInventarioEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="aditivos" EntityType="Self.aditivos" />
           <EntitySet Name="choferes" EntityType="Self.choferes" />
@@ -408,6 +425,30 @@ advertencia 6002: La tabla o vista 'BasculaInventario.dbo.vehiculos' no tiene de
           <EntitySet Name="turnos" EntityType="Self.turnos" />
           <EntitySet Name="usuarios" EntityType="Self.usuarios" />
           <EntitySet Name="vehiculos" EntityType="Self.vehiculos" />
+          <AssociationSet Name="FK__productos__idAdi__367C1819" Association="Self.FK__productos__idAdi__367C1819">
+            <End Role="aditivos" EntitySet="aditivos" />
+            <End Role="productos" EntitySet="productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__productos__idCol__37703C52" Association="Self.FK__productos__idCol__37703C52">
+            <End Role="colores" EntitySet="colores" />
+            <End Role="productos" EntitySet="productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordenesDe__idMaq__2A164134" Association="Self.FK__ordenesDe__idMaq__2A164134">
+            <End Role="maquinas" EntitySet="maquinas" />
+            <End Role="ordenesDeTrabajo" EntitySet="ordenesDeTrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordenesDe__idPro__2B0A656D" Association="Self.FK__ordenesDe__idPro__2B0A656D">
+            <End Role="productos" EntitySet="productos" />
+            <End Role="ordenesDeTrabajo" EntitySet="ordenesDeTrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__registroD__idOdT__3493CFA7" Association="Self.FK__registroD__idOdT__3493CFA7">
+            <End Role="ordenesDeTrabajo" EntitySet="ordenesDeTrabajo" />
+            <End Role="registroDePeso" EntitySet="registroDePeso" />
+          </AssociationSet>
+          <AssociationSet Name="FK__registroD__idPro__3587F3E0" Association="Self.FK__registroD__idPro__3587F3E0">
+            <End Role="productos" EntitySet="productos" />
+            <End Role="registroDePeso" EntitySet="registroDePeso" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>

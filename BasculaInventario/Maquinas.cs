@@ -14,8 +14,17 @@ namespace BasculaInventario
     
     public partial class maquinas
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public maquinas()
+        {
+            this.ordenesDeTrabajo = new HashSet<ordenesDeTrabajo>();
+        }
+    
         public int idMaquina { get; set; }
         public int numeroMaquina { get; set; }
         public string descMaquina { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ordenesDeTrabajo> ordenesDeTrabajo { get; set; }
     }
 }
